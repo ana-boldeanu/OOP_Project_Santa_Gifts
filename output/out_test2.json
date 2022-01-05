@@ -1,0 +1,86 @@
+{
+  "numberOfYears" : 3,
+  "santaBudget" : 1293.0,
+  "initialChildrenList" : [ {
+    "id" : 0,
+    "lastName" : "Popa",
+    "firstName" : "Andreea",
+    "age" : 20,
+    "city" : "Iasi",
+    "niceScore" : 8.0,
+    "giftsPreferences" : [ "Technology", "Toys", "Clothes" ]
+  }, {
+    "id" : 1,
+    "lastName" : "Mihalache",
+    "firstName" : "Tudor",
+    "age" : 17,
+    "city" : "Oradea",
+    "niceScore" : 4.0,
+    "giftsPreferences" : [ "Books", "Board Games" ]
+  }, {
+    "id" : 2,
+    "lastName" : "Stoica",
+    "firstName" : "Tudor",
+    "age" : 3,
+    "city" : "Craiova",
+    "niceScore" : 9.0,
+    "giftsPreferences" : [ "Books", "Clothes" ]
+  }, {
+    "id" : 3,
+    "lastName" : "Pop",
+    "firstName" : "Matei",
+    "age" : 10,
+    "city" : "Craiova",
+    "niceScore" : 3.0,
+    "giftsPreferences" : [ "Books", "Board Games" ]
+  } ],
+  "initialSantaGiftsList" : [ {
+    "productName" : "Shoes",
+    "price" : 70.0,
+    "category" : "Clothes"
+  }, {
+    "productName" : "Lego",
+    "price" : 30.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Handbag",
+    "price" : 200.0,
+    "category" : "Clothes"
+  }, {
+    "productName" : "Teddy Bear",
+    "price" : 10.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Diary of a Wimpy Kid",
+    "price" : 25.0,
+    "category" : "Books"
+  }, {
+    "productName" : "Monopoly",
+    "price" : 30.0,
+    "category" : "Board Games"
+  }, {
+    "productName" : "Iphone",
+    "price" : 700.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Puzzle",
+    "price" : 50.0,
+    "category" : "Board Games"
+  } ],
+  "annualChangesList" : [ {
+    "newSantaBudget" : 1467.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 1798.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 1293.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  } ]
+}

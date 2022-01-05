@@ -1,0 +1,101 @@
+{
+  "numberOfYears" : 2,
+  "santaBudget" : 0.0,
+  "initialChildrenList" : [ {
+    "id" : 0,
+    "lastName" : "Popa",
+    "firstName" : "Tudor",
+    "age" : 14,
+    "city" : "Bucuresti",
+    "niceScore" : 9.0,
+    "giftsPreferences" : [ "Sweets", "Board Games", "Books" ]
+  }, {
+    "id" : 1,
+    "lastName" : "Mihalache",
+    "firstName" : "Matei",
+    "age" : 4,
+    "city" : "Constanta",
+    "niceScore" : 2.0,
+    "giftsPreferences" : [ "Toys", "Sweets", "Books" ]
+  }, {
+    "id" : 2,
+    "lastName" : "Ionescu",
+    "firstName" : "Matei",
+    "age" : 16,
+    "city" : "Braila",
+    "niceScore" : 7.0,
+    "giftsPreferences" : [ "Technology" ]
+  }, {
+    "id" : 3,
+    "lastName" : "Popa",
+    "firstName" : "Diana",
+    "age" : 8,
+    "city" : "Cluj-Napoca",
+    "niceScore" : 7.0,
+    "giftsPreferences" : [ "Books" ]
+  }, {
+    "id" : 4,
+    "lastName" : "Stoica",
+    "firstName" : "Alexandra",
+    "age" : 11,
+    "city" : "Constanta",
+    "niceScore" : 3.0,
+    "giftsPreferences" : [ "Sweets", "Board Games", "Books" ]
+  } ],
+  "initialSantaGiftsList" : [ {
+    "productName" : "Harry Potter",
+    "price" : 35.0,
+    "category" : "Books"
+  }, {
+    "productName" : "Iphone",
+    "price" : 700.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Puzzle",
+    "price" : 50.0,
+    "category" : "Board Games"
+  }, {
+    "productName" : "Lego",
+    "price" : 30.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Milk and Cookies",
+    "price" : 30.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Uno",
+    "price" : 10.0,
+    "category" : "Board Games"
+  }, {
+    "productName" : "Teddy Bear",
+    "price" : 5.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Diary of a Wimpy Kid",
+    "price" : 25.0,
+    "category" : "Books"
+  }, {
+    "productName" : "Laptop",
+    "price" : 500.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Twilight",
+    "price" : 30.0,
+    "category" : "Books"
+  }, {
+    "productName" : "Bag of Candy",
+    "price" : 20.0,
+    "category" : "Sweets"
+  } ],
+  "annualChangesList" : [ {
+    "newSantaBudget" : 200.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 345.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  } ]
+}

@@ -1,0 +1,183 @@
+{
+  "numberOfYears" : 8,
+  "santaBudget" : 161.0,
+  "initialChildrenList" : [ {
+    "id" : 0,
+    "lastName" : "Stoica",
+    "firstName" : "Alexandra",
+    "age" : 3,
+    "city" : "Timisoara",
+    "niceScore" : 7.0,
+    "giftsPreferences" : [ "Books" ]
+  }, {
+    "id" : 1,
+    "lastName" : "Mihalache",
+    "firstName" : "Alexandra",
+    "age" : 17,
+    "city" : "Iasi",
+    "niceScore" : 10.0,
+    "giftsPreferences" : [ "Toys" ]
+  }, {
+    "id" : 2,
+    "lastName" : "Popescu",
+    "firstName" : "Diana",
+    "age" : 16,
+    "city" : "Braila",
+    "niceScore" : 8.0,
+    "giftsPreferences" : [ "Toys" ]
+  } ],
+  "initialSantaGiftsList" : [ {
+    "productName" : "Doll",
+    "price" : 10.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Twilight",
+    "price" : 30.0,
+    "category" : "Books"
+  }, {
+    "productName" : "Teddy Bear",
+    "price" : 5.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Puzzle",
+    "price" : 50.0,
+    "category" : "Board Games"
+  }, {
+    "productName" : "Shoes",
+    "price" : 70.0,
+    "category" : "Clothes"
+  }, {
+    "productName" : "Bag of Candy",
+    "price" : 20.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Monopoly",
+    "price" : 30.0,
+    "category" : "Board Games"
+  } ],
+  "annualChangesList" : [ {
+    "newSantaBudget" : 161.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ {
+      "id" : 3,
+      "newNiceScore" : 1.0,
+      "newGiftsPreferences" : [ ]
+    }, {
+      "id" : 3,
+      "newNiceScore" : 0.0,
+      "newGiftsPreferences" : [ "Books" ]
+    } ]
+  }, {
+    "newSantaBudget" : 835.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 695.0,
+    "newGiftsList" : [ {
+      "productName" : "Puzzle",
+      "price" : 50.0,
+      "category" : "Board Games"
+    } ],
+    "newChildrenList" : [ {
+      "id" : 3,
+      "lastName" : "Mihalache",
+      "firstName" : "Radu",
+      "age" : 4,
+      "city" : "Cluj-Napoca",
+      "niceScore" : 3.0,
+      "giftsPreferences" : [ "Toys", "Books" ]
+    }, {
+      "id" : 4,
+      "lastName" : "Mihalache",
+      "firstName" : "Tudor",
+      "age" : 15,
+      "city" : "Oradea",
+      "niceScore" : 7.0,
+      "giftsPreferences" : [ "Board Games", "Toys" ]
+    } ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 161.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 313.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ {
+      "id" : 5,
+      "lastName" : "Popescu",
+      "firstName" : "Miruna",
+      "age" : 14,
+      "city" : "Timisoara",
+      "niceScore" : 3.0,
+      "giftsPreferences" : [ "Board Games", "Toys", "Books" ]
+    }, {
+      "id" : 6,
+      "lastName" : "Stoica",
+      "firstName" : "Matei",
+      "age" : 20,
+      "city" : "Iasi",
+      "niceScore" : 5.0,
+      "giftsPreferences" : [ "Board Games", "Toys" ]
+    } ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 161.0,
+    "newGiftsList" : [ {
+      "productName" : "Shoes",
+      "price" : 70.0,
+      "category" : "Clothes"
+    } ],
+    "newChildrenList" : [ {
+      "id" : 7,
+      "lastName" : "Popa",
+      "firstName" : "Andreea",
+      "age" : 17,
+      "city" : "Craiova",
+      "niceScore" : 8.0,
+      "giftsPreferences" : [ "Toys" ]
+    }, {
+      "id" : 8,
+      "lastName" : "Cantemir",
+      "firstName" : "Maria",
+      "age" : 20,
+      "city" : "Oradea",
+      "niceScore" : 8.0,
+      "giftsPreferences" : [ "Clothes", "Board Games", "Books" ]
+    } ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 161.0,
+    "newGiftsList" : [ {
+      "productName" : "Bag of Candy",
+      "price" : 20.0,
+      "category" : "Sweets"
+    } ],
+    "newChildrenList" : [ {
+      "id" : 9,
+      "lastName" : "Mihalache",
+      "firstName" : "Radu",
+      "age" : 13,
+      "city" : "Craiova",
+      "niceScore" : 7.0,
+      "giftsPreferences" : [ "Clothes", "Board Games", "Toys" ]
+    } ],
+    "childrenUpdates" : [ {
+      "id" : 6,
+      "newNiceScore" : 6.0,
+      "newGiftsPreferences" : [ "Books" ]
+    } ]
+  }, {
+    "newSantaBudget" : 161.0,
+    "newGiftsList" : [ {
+      "productName" : "Monopoly",
+      "price" : 30.0,
+      "category" : "Board Games"
+    } ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  } ]
+}
