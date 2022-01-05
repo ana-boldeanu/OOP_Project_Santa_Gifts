@@ -1,0 +1,180 @@
+{
+  "numberOfYears" : 5,
+  "santaBudget" : 1667.0,
+  "initialChildrenList" : [ {
+    "id" : 0,
+    "lastName" : "Mihalache",
+    "firstName" : "Alexandra",
+    "age" : 6,
+    "city" : "Timisoara",
+    "niceScore" : 4.0,
+    "giftsPreferences" : [ "Board Games", "Clothes", "Books" ]
+  }, {
+    "id" : 1,
+    "lastName" : "Cantemir",
+    "firstName" : "Maria",
+    "age" : 17,
+    "city" : "Brasov",
+    "niceScore" : 6.0,
+    "giftsPreferences" : [ "Board Games", "Technology", "Sweets" ]
+  }, {
+    "id" : 2,
+    "lastName" : "Popa",
+    "firstName" : "Tudor",
+    "age" : 12,
+    "city" : "Oradea",
+    "niceScore" : 5.0,
+    "giftsPreferences" : [ "Technology", "Clothes", "Books" ]
+  }, {
+    "id" : 3,
+    "lastName" : "Pop",
+    "firstName" : "Mihai",
+    "age" : 6,
+    "city" : "Craiova",
+    "niceScore" : 2.0,
+    "giftsPreferences" : [ "Sweets" ]
+  }, {
+    "id" : 4,
+    "lastName" : "Popa",
+    "firstName" : "Andreea",
+    "age" : 8,
+    "city" : "Brasov",
+    "niceScore" : 4.0,
+    "giftsPreferences" : [ "Technology", "Toys" ]
+  } ],
+  "initialSantaGiftsList" : [ {
+    "productName" : "Harry Potter",
+    "price" : 35.0,
+    "category" : "Books"
+  }, {
+    "productName" : "Chocolate",
+    "price" : 15.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Puzzle",
+    "price" : 50.0,
+    "category" : "Board Games"
+  }, {
+    "productName" : "Doll",
+    "price" : 10.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Milk and Cookies",
+    "price" : 30.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Twilight",
+    "price" : 30.0,
+    "category" : "Books"
+  }, {
+    "productName" : "Handbag",
+    "price" : 200.0,
+    "category" : "Clothes"
+  }, {
+    "productName" : "Laptop",
+    "price" : 500.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Iphone",
+    "price" : 700.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Bag of Candy",
+    "price" : 20.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Headphones",
+    "price" : 100.0,
+    "category" : "Technology"
+  } ],
+  "annualChangesList" : [ {
+    "newSantaBudget" : 1667.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ {
+      "id" : 3,
+      "newNiceScore" : 7.0,
+      "newGiftsPreferences" : [ ]
+    }, {
+      "id" : 4,
+      "newNiceScore" : 0.0,
+      "newGiftsPreferences" : [ "Board Games", "Sweets", "Technology", "Clothes" ]
+    } ]
+  }, {
+    "newSantaBudget" : 1667.0,
+    "newGiftsList" : [ {
+      "productName" : "Bag of Candy",
+      "price" : 20.0,
+      "category" : "Sweets"
+    }, {
+      "productName" : "Headphones",
+      "price" : 100.0,
+      "category" : "Technology"
+    } ],
+    "newChildrenList" : [ {
+      "id" : 5,
+      "lastName" : "Cantemir",
+      "firstName" : "Miruna",
+      "age" : 7,
+      "city" : "Timisoara",
+      "niceScore" : 9.0,
+      "giftsPreferences" : [ "Clothes" ]
+    }, {
+      "id" : 6,
+      "lastName" : "Popa",
+      "firstName" : "Matei",
+      "age" : 10,
+      "city" : "Craiova",
+      "niceScore" : 8.0,
+      "giftsPreferences" : [ "Technology", "Sweets", "Books" ]
+    } ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 127.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 984.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ {
+      "id" : 7,
+      "lastName" : "Mihalache",
+      "firstName" : "Andreea",
+      "age" : 1,
+      "city" : "Braila",
+      "niceScore" : 6.0,
+      "giftsPreferences" : [ "Board Games", "Sweets" ]
+    } ],
+    "childrenUpdates" : [ {
+      "id" : 3,
+      "newNiceScore" : 10.0,
+      "newGiftsPreferences" : [ "Books", "Technology" ]
+    }, {
+      "id" : 6,
+      "newNiceScore" : 5.0,
+      "newGiftsPreferences" : [ ]
+    } ]
+  }, {
+    "newSantaBudget" : 758.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ {
+      "id" : 8,
+      "lastName" : "Ionescu",
+      "firstName" : "Mihai",
+      "age" : 3,
+      "city" : "Timisoara",
+      "niceScore" : 2.0,
+      "giftsPreferences" : [ "Technology", "Sweets", "Toys", "Books" ]
+    }, {
+      "id" : 9,
+      "lastName" : "Stoica",
+      "firstName" : "Miruna",
+      "age" : 11,
+      "city" : "Brasov",
+      "niceScore" : 2.0,
+      "giftsPreferences" : [ "Technology", "Sweets", "Clothes" ]
+    } ],
+    "childrenUpdates" : [ ]
+  } ]
+}

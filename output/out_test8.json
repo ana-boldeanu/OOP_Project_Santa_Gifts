@@ -1,0 +1,79 @@
+{
+  "numberOfYears" : 4,
+  "santaBudget" : 527.0,
+  "initialChildrenList" : [ {
+    "id" : 0,
+    "lastName" : "Stoica",
+    "firstName" : "Andreea",
+    "age" : 17,
+    "city" : "Cluj-Napoca",
+    "niceScore" : 2.0,
+    "giftsPreferences" : [ "Clothes", "Toys" ]
+  }, {
+    "id" : 1,
+    "lastName" : "Pop",
+    "firstName" : "Alexandra",
+    "age" : 16,
+    "city" : "Iasi",
+    "niceScore" : 8.0,
+    "giftsPreferences" : [ "Toys" ]
+  }, {
+    "id" : 2,
+    "lastName" : "Popa",
+    "firstName" : "Diana",
+    "age" : 15,
+    "city" : "Brasov",
+    "niceScore" : 10.0,
+    "giftsPreferences" : [ "Technology", "Clothes" ]
+  } ],
+  "initialSantaGiftsList" : [ {
+    "productName" : "Bike",
+    "price" : 25.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Headphones",
+    "price" : 100.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Shoes",
+    "price" : 70.0,
+    "category" : "Clothes"
+  }, {
+    "productName" : "Castle",
+    "price" : 15.0,
+    "category" : "Toys"
+  }, {
+    "productName" : "Handbag",
+    "price" : 200.0,
+    "category" : "Clothes"
+  }, {
+    "productName" : "Iphone",
+    "price" : 700.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Doll",
+    "price" : 10.0,
+    "category" : "Toys"
+  } ],
+  "annualChangesList" : [ {
+    "newSantaBudget" : 500.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 657.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 890.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 1200.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  } ]
+}

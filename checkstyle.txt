@@ -1,2 +1,19 @@
 Starting audit...
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:62:34: Parameter numberOfYears should be final. [FinalParameters]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:66:32: Parameter santaBudget should be final. [FinalParameters]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:70:40: Parameter initialChildrenList should be final. [FinalParameters]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:74:42: Parameter initialSantaGiftsList should be final. [FinalParameters]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:80:25: '+' should be on a new line. [OperatorWrap]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:81:50: '+' should be on a new line. [OperatorWrap]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:82:48: '+' should be on a new line. [OperatorWrap]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:83:64: '+' should be on a new line. [OperatorWrap]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:84:68: '+' should be on a new line. [OperatorWrap]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:85:60: '+' should be on a new line. [OperatorWrap]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\InputLoader.java:37:5: Method length is 157 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\main\Main.java:5:8: Unused import - common.Constants. [UnusedImports]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\main\Main.java:11:8: Unused import - java.nio.file.Files. [UnusedImports]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\main\Main.java:12:8: Unused import - java.nio.file.Path. [UnusedImports]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\main\Main.java:13:8: Unused import - java.nio.file.Paths. [UnusedImports]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\main\Main.java:14:8: Unused import - java.util.Objects. [UnusedImports]
 Audit done.
+Checkstyle ends with 16 errors.

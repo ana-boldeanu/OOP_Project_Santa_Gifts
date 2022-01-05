@@ -1,0 +1,132 @@
+{
+  "numberOfYears" : 5,
+  "santaBudget" : 1065.0,
+  "initialChildrenList" : [ {
+    "id" : 0,
+    "lastName" : "Mihalache",
+    "firstName" : "Matei",
+    "age" : 10,
+    "city" : "Iasi",
+    "niceScore" : 7.0,
+    "giftsPreferences" : [ "Technology", "Sweets" ]
+  }, {
+    "id" : 1,
+    "lastName" : "Stoica",
+    "firstName" : "Tudor",
+    "age" : 4,
+    "city" : "Constanta",
+    "niceScore" : 2.0,
+    "giftsPreferences" : [ "Board Games", "Sweets" ]
+  }, {
+    "id" : 2,
+    "lastName" : "Stoica",
+    "firstName" : "Maria",
+    "age" : 11,
+    "city" : "Brasov",
+    "niceScore" : 6.0,
+    "giftsPreferences" : [ "Sweets" ]
+  }, {
+    "id" : 3,
+    "lastName" : "Popa",
+    "firstName" : "Tudor",
+    "age" : 14,
+    "city" : "Bucuresti",
+    "niceScore" : 6.0,
+    "giftsPreferences" : [ "Technology" ]
+  }, {
+    "id" : 4,
+    "lastName" : "Pop",
+    "firstName" : "Matei",
+    "age" : 20,
+    "city" : "Braila",
+    "niceScore" : 2.0,
+    "giftsPreferences" : [ "Board Games", "Books" ]
+  }, {
+    "id" : 5,
+    "lastName" : "Ionescu",
+    "firstName" : "Miruna",
+    "age" : 16,
+    "city" : "Timisoara",
+    "niceScore" : 3.0,
+    "giftsPreferences" : [ "Board Games" ]
+  } ],
+  "initialSantaGiftsList" : [ {
+    "productName" : "Harry Potter",
+    "price" : 35.0,
+    "category" : "Books"
+  }, {
+    "productName" : "Chocolate",
+    "price" : 15.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Headphones",
+    "price" : 100.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Gummy Bears",
+    "price" : 10.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Puzzle",
+    "price" : 50.0,
+    "category" : "Board Games"
+  }, {
+    "productName" : "Milk and Cookies",
+    "price" : 30.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Uno",
+    "price" : 10.0,
+    "category" : "Board Games"
+  }, {
+    "productName" : "Monopoly",
+    "price" : 30.0,
+    "category" : "Board Games"
+  }, {
+    "productName" : "Iphone",
+    "price" : 700.0,
+    "category" : "Technology"
+  }, {
+    "productName" : "Milk and Cookies",
+    "price" : 30.0,
+    "category" : "Sweets"
+  }, {
+    "productName" : "Chocolate",
+    "price" : 15.0,
+    "category" : "Sweets"
+  } ],
+  "annualChangesList" : [ {
+    "newSantaBudget" : 1065.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ {
+      "id" : 1,
+      "newNiceScore" : 0.0,
+      "newGiftsPreferences" : [ ]
+    } ]
+  }, {
+    "newSantaBudget" : 1065.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ {
+      "id" : 1,
+      "newNiceScore" : 0.0,
+      "newGiftsPreferences" : [ "Sweets" ]
+    } ]
+  }, {
+    "newSantaBudget" : 1700.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 1245.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  }, {
+    "newSantaBudget" : 700.0,
+    "newGiftsList" : [ ],
+    "newChildrenList" : [ ],
+    "childrenUpdates" : [ ]
+  } ]
+}
