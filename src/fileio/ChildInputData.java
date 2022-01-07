@@ -1,5 +1,7 @@
 package fileio;
 
+import common.Constants;
+import enums.AgeCategory;
 import enums.Category;
 
 import java.util.List;
@@ -48,6 +50,24 @@ public final class ChildInputData {
         this.city = city;
         this.niceScore = niceScore;
         this.giftsPreferences = giftsPreferences;
+    }
+
+    /**
+     * Compute and return the AgeCategory enum according to the age of the Child given as input
+     */
+    public AgeCategory getAgeCategory() {
+        if (age <= Constants.BABY_MAX_AGE) {
+            return AgeCategory.BABY;
+
+        } else if (age <= Constants.KID_MAX_AGE) {
+            return AgeCategory.KID;
+
+        } else if (age <= Constants.TEEN_MAX_AGE) {
+            return AgeCategory.TEEN;
+
+        } else {
+            return AgeCategory.YOUNG_ADULT;
+        }
     }
 
     public int getId() {
