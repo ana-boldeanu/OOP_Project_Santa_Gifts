@@ -1,6 +1,8 @@
 package fileio;
 
 import common.Constants;
+import database.AnnualChangesData;
+import database.ChildUpdateData;
 import enums.Category;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -39,7 +41,7 @@ public final class InputLoader {
 
         // Data to be read
         int numberOfYears = 0;
-        double santaBudget = (double) 0;
+        double santaBudget = 0;
         List<ChildInputData> initialChildrenList = new ArrayList<>();
         List<GiftInputData> initialSantaGiftsList = new ArrayList<>();
         List<AnnualChangesData> annualChangesList = new ArrayList<>();
@@ -94,7 +96,7 @@ public final class InputLoader {
 
             if (jsonAnnualChanges != null) {
                 for (Object jsonAnnualChange : jsonAnnualChanges) {
-                    Double newSantaBudget = Double.parseDouble(((JSONObject) jsonAnnualChange)
+                    double newSantaBudget = Double.parseDouble(((JSONObject) jsonAnnualChange)
                             .get(Constants.NEW_SANTA_BUDGET).toString());
                     List<GiftInputData> newGiftsList = new ArrayList<>();
                     List<ChildInputData> newChildrenList = new ArrayList<>();

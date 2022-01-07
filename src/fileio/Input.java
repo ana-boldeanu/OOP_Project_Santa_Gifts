@@ -1,5 +1,7 @@
 package fileio;
 
+import database.AnnualChangesData;
+
 import java.util.List;
 
 /**
@@ -10,19 +12,19 @@ public final class Input {
     /**
      * Number of years (rounds to run the simulation)
      */
-    private int numberOfYears;
+    private final int numberOfYears;
     /**
      * Santa's initial budget (used in round 0)
      */
-    private Double santaBudget;
+    private final Double santaBudget;
     /**
      * List of children from initialData
      */
-    private List<ChildInputData> initialChildrenList;
+    private final List<ChildInputData> initialChildrenList;
     /**
      * List of gifts from initialData
      */
-    private List<GiftInputData> initialSantaGiftsList;
+    private final List<GiftInputData> initialSantaGiftsList;
     /**
      * List of annual changes (updates for each round)
      */
@@ -57,22 +59,6 @@ public final class Input {
 
     public List<AnnualChangesData> getAnnualChangesList() {
         return annualChangesList;
-    }
-
-    public void setNumberOfYears(int numberOfYears) {
-        this.numberOfYears = numberOfYears;
-    }
-
-    public void setSantaBudget(Double santaBudget) {
-        this.santaBudget = santaBudget;
-    }
-
-    public void setInitialChildrenList(List<ChildInputData> initialChildrenList) {
-        this.initialChildrenList = initialChildrenList;
-    }
-
-    public void setInitialSantaGiftsList(List<GiftInputData> initialSantaGiftsList) {
-        this.initialSantaGiftsList = initialSantaGiftsList;
     }
 
     @Override

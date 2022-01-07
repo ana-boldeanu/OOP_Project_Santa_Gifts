@@ -40,7 +40,7 @@ public final class Main {
             action(file.getAbsolutePath(), filepath);
         }
 
-        // Checker.calculateScore();
+        Checker.calculateScore();
     }
 
     /**
