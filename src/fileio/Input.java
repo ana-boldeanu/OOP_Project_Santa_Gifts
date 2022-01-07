@@ -1,7 +1,5 @@
 package fileio;
 
-import database.AnnualChangesData;
-
 import java.util.List;
 
 /**
@@ -59,16 +57,5 @@ public final class Input {
 
     public List<AnnualChangesData> getAnnualChangesList() {
         return annualChangesList;
-    }
-
-    @Override
-    public String toString() {
-        return "Input{" +
-                "numberOfYears=" + numberOfYears +
-                ", santaBudget=" + santaBudget +
-                ", initialChildrenList=" + initialChildrenList +
-                ", initialSantaGiftsList=" + initialSantaGiftsList +
-                ", annualChangesList=" + annualChangesList +
-                '}';
     }
 }

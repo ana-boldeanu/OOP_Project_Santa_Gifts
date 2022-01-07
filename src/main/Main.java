@@ -3,8 +3,12 @@ package main;
 import checker.Checker;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import common.Constants;
+import database.Database;
 import fileio.Input;
 import fileio.InputLoader;
+import simulation.Output;
+import simulation.Round;
+import simulation.Simulation;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,9 +56,14 @@ public final class Main {
         InputLoader inputLoader = new InputLoader(filePath1);
         Input input = inputLoader.readData();
 
-        String result = input.toString();
+        Database database = Database.getInstance(input);
+        Simulation simulation = new Simulation(database.getNumberOfYears(), new Round(database));
+
+        simulation.run();
+
+        Output output = new Output(simulation.getResults());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath2), input);
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath2), output);
     }
 }

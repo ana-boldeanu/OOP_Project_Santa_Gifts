@@ -1,143 +1,361 @@
 {
-  "numberOfYears" : 4,
-  "santaBudget" : 458.0,
-  "initialChildrenList" : [ {
+  "results" : [ [ {
     "id" : 0,
-    "lastName" : "Ionescu",
-    "firstName" : "Tudor",
-    "age" : 8,
+    "lastName" : "Maria",
+    "firstName" : "Cantemir",
     "city" : "Timisoara",
-    "niceScore" : 8.0,
-    "giftsPreferences" : [ "Sweets" ]
-  }, {
-    "id" : 1,
-    "lastName" : "Ionescu",
-    "firstName" : "Maria",
     "age" : 10,
-    "city" : "Brasov",
-    "niceScore" : 4.0,
-    "giftsPreferences" : [ "Toys" ]
-  }, {
-    "id" : 2,
-    "lastName" : "Popescu",
-    "firstName" : "Miruna",
-    "age" : 16,
-    "city" : "Timisoara",
-    "niceScore" : 9.0,
-    "giftsPreferences" : [ "Technology", "Board Games", "Sweets" ]
-  }, {
-    "id" : 3,
-    "lastName" : "Pop",
-    "firstName" : "Alexandra",
-    "age" : 17,
-    "city" : "Constanta",
-    "niceScore" : 5.0,
-    "giftsPreferences" : [ "Books", "Toys" ]
-  }, {
-    "id" : 4,
-    "lastName" : "Stoica",
-    "firstName" : "Mihai",
-    "age" : 14,
-    "city" : "Bucuresti",
-    "niceScore" : 7.0,
-    "giftsPreferences" : [ "Books", "Sweets" ]
-  } ],
-  "initialSantaGiftsList" : [ {
-    "productName" : "Chocolate",
-    "price" : 15.0,
-    "category" : "Sweets"
-  }, {
-    "productName" : "Bike",
-    "price" : 25.0,
-    "category" : "Toys"
-  }, {
-    "productName" : "Headphones",
-    "price" : 100.0,
-    "category" : "Technology"
-  }, {
-    "productName" : "Gummy Bears",
-    "price" : 10.0,
-    "category" : "Sweets"
-  }, {
-    "productName" : "Car",
-    "price" : 20.0,
-    "category" : "Toys"
-  }, {
-    "productName" : "Diary of a Wimpy Kid",
-    "price" : 25.0,
-    "category" : "Books"
-  }, {
-    "productName" : "Monopoly",
-    "price" : 30.0,
-    "category" : "Board Games"
-  }, {
-    "productName" : "Twilight",
-    "price" : 30.0,
-    "category" : "Books"
-  }, {
-    "productName" : "Bag of Candy",
-    "price" : 20.0,
-    "category" : "Sweets"
-  }, {
-    "productName" : "Puzzle",
-    "price" : 50.0,
-    "category" : "Board Games"
-  }, {
-    "productName" : "Harry Potter",
-    "price" : 35.0,
-    "category" : "Books"
-  } ],
-  "annualChangesList" : [ {
-    "newSantaBudget" : 987.0,
-    "newGiftsList" : [ ],
-    "newChildrenList" : [ {
-      "id" : 5,
-      "lastName" : "Popescu",
-      "firstName" : "Mihai",
-      "age" : 4,
-      "city" : "Craiova",
-      "niceScore" : 8.0,
-      "giftsPreferences" : [ "Toys" ]
-    } ],
-    "childrenUpdates" : [ ]
-  }, {
-    "newSantaBudget" : 336.0,
-    "newGiftsList" : [ ],
-    "newChildrenList" : [ ],
-    "childrenUpdates" : [ {
-      "id" : 5,
-      "newNiceScore" : 9.0,
-      "newGiftsPreferences" : [ "Board Games" ]
-    }, {
-      "id" : 2,
-      "newNiceScore" : 2.0,
-      "newGiftsPreferences" : [ "Toys", "Toys" ]
-    } ]
-  }, {
-    "newSantaBudget" : 977.0,
-    "newGiftsList" : [ {
-      "productName" : "Puzzle",
-      "price" : 50.0,
+    "giftsPreferences" : [ "Board Games", "Clothes", "Books" ],
+    "averageScore" : 10.0,
+    "niceScoresList" : [ 10.0 ],
+    "assignedBudget" : 326.0,
+    "receivedGifts" : [ {
+      "productName" : "Uno",
+      "price" : 10.0,
       "category" : "Board Games"
-    } ],
-    "newChildrenList" : [ ],
-    "childrenUpdates" : [ {
-      "id" : 2,
-      "newNiceScore" : 7.0,
-      "newGiftsPreferences" : [ "Board Games", "Books", "Sweets" ]
     }, {
-      "id" : 3,
-      "newNiceScore" : 6.0,
-      "newGiftsPreferences" : [ "Books", "Sweets", "Books", "Toys" ]
-    } ]
-  }, {
-    "newSantaBudget" : 376.0,
-    "newGiftsList" : [ {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
       "productName" : "Harry Potter",
       "price" : 35.0,
       "category" : "Books"
-    } ],
-    "newChildrenList" : [ ],
-    "childrenUpdates" : [ ]
-  } ]
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    } ]
+  } ], [ {
+    "id" : 0,
+    "lastName" : "Maria",
+    "firstName" : "Cantemir",
+    "city" : "Timisoara",
+    "age" : 11,
+    "giftsPreferences" : [ "Board Games", "Clothes", "Books" ],
+    "averageScore" : 10.0,
+    "niceScoresList" : [ 10.0 ],
+    "assignedBudget" : 326.0,
+    "receivedGifts" : [ {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    }, {
+      "productName" : "Uno",
+      "price" : 10.0,
+      "category" : "Board Games"
+    }, {
+      "productName" : "Dress",
+      "price" : 45.0,
+      "category" : "Clothes"
+    }, {
+      "productName" : "Harry Potter",
+      "price" : 35.0,
+      "category" : "Books"
+    } ]
+  } ] ]
 }

@@ -1,6 +1,7 @@
 package database;
 
 import enums.Category;
+import fileio.AnnualChangesData;
 import fileio.ChildInputData;
 import fileio.GiftInputData;
 import fileio.Input;
@@ -32,7 +33,7 @@ public final class Database {
     /**
      * List of annual changes (updates for each round)
      */
-    private final List<AnnualChangesData> annualChangesList = new ArrayList<>();
+    private final List<AnnualChange> annualChangesList = new ArrayList<>();
 
     /**
      * This class is a Singleton
@@ -61,7 +62,32 @@ public final class Database {
                     gift.getCategory()));
         }
 
-        annualChangesList.addAll(input.getAnnualChangesList());
+        for (AnnualChangesData annualChange : input.getAnnualChangesList()) {
+            List<Child> newChildrenList = new ArrayList<>();
+            List<Gift> newGiftsList = new ArrayList<>();
+
+            for (ChildInputData child : annualChange.getNewChildrenList()) {
+                List<Category> giftsPreferences = new ArrayList<>(child.getGiftsPreferences());
+                List<Double> niceScores = new ArrayList<>();
+                niceScores.add(child.getNiceScore());
+
+                Child newChild = new Child(child.getId(), child.getLastName(),
+                        child.getFirstName(), child.getAge(), child.getAgeCategory(),
+                        child.getCity(), giftsPreferences, niceScores);
+                // Set the averageScore Strategy for this Child
+                newChild.setAverageScoreStrategy();
+
+                newChildrenList.add(newChild);
+            }
+
+            for (GiftInputData gift : annualChange.getNewGiftsList()) {
+                newGiftsList.add(new Gift(gift.getProductName(), gift.getPrice(),
+                        gift.getCategory()));
+            }
+
+            annualChangesList.add(new AnnualChange(annualChange.getNewSantaBudget(),
+                    newGiftsList, newChildrenList, annualChange.getChildrenUpdates()));
+        }
     }
 
     /**
@@ -90,7 +116,7 @@ public final class Database {
         return initialSantaGiftsList;
     }
 
-    public List<AnnualChangesData> getAnnualChangesList() {
+    public List<AnnualChange> getAnnualChangesList() {
         return annualChangesList;
     }
 }

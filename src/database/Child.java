@@ -1,10 +1,12 @@
 package database;
 
+import common.Constants;
 import enums.AgeCategory;
 import enums.Category;
 import strategies.AverageScoreStrategy;
 import strategies.AverageStrategyFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,11 +29,11 @@ public final class Child {
     /**
      * Age
      */
-    private final int age;
+    private int age;
     /**
      * Age Category (based on age)
      */
-    private final AgeCategory ageCategory;
+    private AgeCategory ageCategory;
     /**
      * City
      */
@@ -39,7 +41,7 @@ public final class Child {
     /**
      * List of Gifts preferences
      */
-    private final List<Category> giftsPreferences;
+    private List<Category> giftsPreferences;
     /**
      * Nice Scores (used to compute Average Score)
      */
@@ -49,9 +51,17 @@ public final class Child {
      */
     private AverageScoreStrategy averageScoreStrategy;
     /**
-     * Average Score
+     * Average Score in current Round
      */
     private Double averageScore;
+    /**
+     * Santa's budget for this Child in current Round
+     */
+    private Double assignedBudget;
+    /**
+     * Gifts that this Child received in current Round
+     */
+    private List<Gift> receivedGifts = new ArrayList<>();
 
     public Child(final int id, final String lastName, final String firstName, final int age,
                  final AgeCategory ageCategory, final String city,
@@ -74,8 +84,51 @@ public final class Child {
         this.averageScoreStrategy = strategyFactory.createStrategy(this);
     }
 
+    /**
+     * Use this Child's Strategy to compute their averageScore
+     */
     public void computeAverageScore() {
         this.averageScore = averageScoreStrategy.getScore();
+    }
+
+    /**
+     * Add a Gift to this Child's receivedGifts List
+     */
+    public void receiveGift(final Gift gift) {
+        this.receivedGifts.add(gift);
+    }
+
+    /**
+     * Add a new NiceScore to this Child's niceScores List
+     */
+    public void receiveNiceScore(final Double niceScore) {
+        this.niceScoresList.add(niceScore);
+    }
+
+    /**
+     * Increment this Child's age and update their ageCategory
+     */
+    public void incrementAge() {
+        age++;
+        updateAgeCategory();
+    }
+
+    /**
+     * Update this Child's ageCategory
+     */
+    public void updateAgeCategory() {
+        if (age <= Constants.BABY_MAX_AGE) {
+            ageCategory = AgeCategory.BABY;
+
+        } else if (age <= Constants.KID_MAX_AGE) {
+            ageCategory = AgeCategory.KID;
+
+        } else if (age <= Constants.TEEN_MAX_AGE) {
+            ageCategory = AgeCategory.TEEN;
+
+        } else {
+            ageCategory = AgeCategory.YOUNG_ADULT;
+        }
     }
 
     public int getId() {
@@ -116,5 +169,37 @@ public final class Child {
 
     public Double getAverageScore() {
         return averageScore;
+    }
+
+    public Double getAssignedBudget() {
+        return assignedBudget;
+    }
+
+    public List<Gift> getReceivedGifts() {
+        return receivedGifts;
+    }
+
+    public void setAge(final int age) {
+        this.age = age;
+    }
+
+    public void setGiftsPreferences(final List<Category> giftsPreferences) {
+        this.giftsPreferences = giftsPreferences;
+    }
+
+    public void setAgeCategory(final AgeCategory ageCategory) {
+        this.ageCategory = ageCategory;
+    }
+
+    public void setAverageScore(final Double averageScore) {
+        this.averageScore = averageScore;
+    }
+
+    public void setAssignedBudget(final Double assignedBudget) {
+        this.assignedBudget = assignedBudget;
+    }
+
+    public void setReceivedGifts(final List<Gift> receivedGifts) {
+        this.receivedGifts = receivedGifts;
     }
 }

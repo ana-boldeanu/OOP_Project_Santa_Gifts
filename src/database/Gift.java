@@ -21,4 +21,16 @@ public final class Gift {
         this.price = price;
         this.category = category;
     }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
 }

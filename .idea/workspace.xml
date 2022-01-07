@@ -5,57 +5,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="File I/O Operations + JSON Parsing">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/Child.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/database/Gift.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/enums/AgeCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/simulation/Round.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/AverageScoreStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/AverageStrategyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/BabyAverageScore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/KidAverageScore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/TeenAverageScore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/strategies/YoungAdultAverageScore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/simulation/Simulation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/common/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/common/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/enums/Category.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/enums/Category.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/ChildInputData.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/ChildInputData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/Input.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/Input.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/Category.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/AnnualChangesData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/AnnualChangesData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/ChildInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/ChildInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/ChildUpdateData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ChildUpdateData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test1.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test10.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test10.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test11.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test11.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test12.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test12.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test13.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test13.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test14.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test14.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test15.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test15.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test16.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test16.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test17.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test17.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test18.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test18.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test19.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test19.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test2.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test20.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test20.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test21.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test21.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test22.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test22.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test23.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test23.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test24.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test24.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test25.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test25.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test3.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test4.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test5.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test6.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test6.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test7.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test8.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/out_test9.json" beforeDir="false" afterPath="$PROJECT_DIR$/output/out_test9.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Child.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/Gift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Gift.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileio/Input.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/Input.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/InputLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/InputLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulation/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Round.java" afterDir="false" />
     </list>
-    <list id="0675eeb6-cf95-4921-b816-565db58721ee" name="out_test" comment="out_test">
-      <change beforePath="$PROJECT_DIR$/output/out_test1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test10.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test11.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test12.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test13.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test14.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test15.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test16.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test17.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test18.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test19.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test2.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test20.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test21.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test22.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test23.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test24.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test25.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test3.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test4.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test5.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test6.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test7.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/out_test9.json" beforeDir="false" />
-    </list>
+    <list id="0675eeb6-cf95-4921-b816-565db58721ee" name="out_test" comment="out_test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,14 +68,14 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/database/Child.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/database/Database.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/database/Gift.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/strategies/YoungAdultAverageScore.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/strategies/KidAverageScore.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/strategies/AverageScoreStrategy.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/strategies/TeenAverageScore.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/strategies/KidAverageScore.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/strategies/BabyAverageScore.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/database/Child.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/strategies/AverageScoreStrategy.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/database/Database.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/fileio/Input.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/fileio/GiftInputData.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -111,6 +100,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="fileio" />
       <recent name="database" />
       <recent name="enums" />
     </key>

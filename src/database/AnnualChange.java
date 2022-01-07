@@ -1,14 +1,8 @@
 package database;
 
-import fileio.ChildInputData;
-import fileio.GiftInputData;
-
 import java.util.List;
 
-/**
- * Class that contains information that changes in each round
- */
-public final class AnnualChangesData {
+public final class AnnualChange {
     /**
      * New Santa's budget
      */
@@ -16,19 +10,19 @@ public final class AnnualChangesData {
     /**
      * New Gifts to be added in SantaGiftsList
      */
-    private final List<GiftInputData> newGiftsList;
+    private final List<Gift> newGiftsList;
     /**
      * New Children to be added in ChildrenList
      */
-    private final List<ChildInputData> newChildrenList;
+    private final List<Child> newChildrenList;
     /**
      * List of updates for some Children
      */
     private final List<ChildUpdateData> childrenUpdates;
 
-    public AnnualChangesData(final double newSantaBudget, final List<GiftInputData> newGiftsList,
-                             final List<ChildInputData> newChildrenList,
-                             final List<ChildUpdateData> childrenUpdates) {
+    public AnnualChange(final double newSantaBudget, final List<Gift> newGiftsList,
+                        final List<Child> newChildrenList,
+                        final List<ChildUpdateData> childrenUpdates) {
         this.newSantaBudget = newSantaBudget;
         this.newGiftsList = newGiftsList;
         this.newChildrenList = newChildrenList;
@@ -39,11 +33,11 @@ public final class AnnualChangesData {
         return newSantaBudget;
     }
 
-    public List<GiftInputData> getNewGiftsList() {
+    public List<Gift> getNewGiftsList() {
         return newGiftsList;
     }
 
-    public List<ChildInputData> getNewChildrenList() {
+    public List<Child> getNewChildrenList() {
         return newChildrenList;
     }
 
