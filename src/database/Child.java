@@ -99,7 +99,7 @@ public final class Child {
     }
 
     /**
-     * Empty the list of Received Gifts for next Round
+     * Clear the list of Received Gifts for next Round
      */
     public void resetReceivedGifts() {
         this.receivedGifts.clear();

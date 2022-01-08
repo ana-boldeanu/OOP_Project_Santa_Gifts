@@ -17,23 +17,23 @@ public final class Database {
     /**
      * Number of years (rounds to run the simulation)
      */
-    private int numberOfYears;
+    private final int numberOfYears;
     /**
      * Santa's initial budget (used in round 0)
      */
-    private Double initialSantaBudget;
+    private final Double initialSantaBudget;
     /**
      * List of children from initialData
      */
-    private List<Child> initialChildrenList = new ArrayList<>();
+    private final List<Child> initialChildrenList = new ArrayList<>();
     /**
      * List of gifts from initialData
      */
-    private List<Gift> initialSantaGiftsList = new ArrayList<>();
+    private final List<Gift> initialSantaGiftsList = new ArrayList<>();
     /**
      * List of annual changes (updates for each round)
      */
-    private List<AnnualChange> annualChangesList = new ArrayList<>();
+    private final List<AnnualChange> annualChangesList = new ArrayList<>();
 
     /**
      * The constructor makes copies of the lists given as Input
@@ -42,6 +42,7 @@ public final class Database {
         this.numberOfYears = input.getNumberOfYears();
         this.initialSantaBudget = input.getSantaBudget();
 
+        // Build the list of Child objects based on the list of ChildInputData objects
         for (ChildInputData child : input.getInitialChildrenList()) {
             List<Category> giftsPreferences = new ArrayList<>(child.getGiftsPreferences());
             List<Double> niceScores = new ArrayList<>();
@@ -56,11 +57,13 @@ public final class Database {
             initialChildrenList.add(newChild);
         }
 
+        // Build the list of Gift objects
         for (GiftInputData gift : input.getInitialSantaGiftsList()) {
             initialSantaGiftsList.add(new Gift(gift.getProductName(), gift.getPrice(),
                     gift.getCategory()));
         }
 
+        // Build the list of AnnualChange objects
         for (AnnualChangesData annualChange : input.getAnnualChangesList()) {
             List<Child> newChildrenList = new ArrayList<>();
             List<Gift> newGiftsList = new ArrayList<>();

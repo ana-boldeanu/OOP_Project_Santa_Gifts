@@ -1,0 +1,177 @@
+// Boldeanu Ana-Maria
+// Group 321CD
+// OOP Project 2021 - Stage 1
+
+============================ Components & Approach =============================
+# main
+    * Main - Entry point for testing. To run a test, the method action() does
+    the following:
+        - It creates an Input object based on the data parsed from the JSON
+        files.
+        - It creates a unique instance of the Database that will be used across
+        simulations.
+        - The Simulation object is used to execute the main operations for this
+        project and to store the final results.
+
+# fileio
+    This package contains classes used for parsing the information from the
+  JSON files given as input.
+
+    * InputLoader - Parsing class
+        - The readData() method returns an Input object that contains the
+        data that has been read for the current test.
+
+    * Input - Input data class (read-only)
+        - It contains only the initial data for every simulation.
+        - Contains 3 lists of:
+            * ChildInputData, GiftInputData, AnnualChangesData
+        - These objects are not used/updated during the simulation. They
+        exist only to contain the input data.
+
+    * Utils - Utility class
+
+# database
+    This package contains the general information that is used to run a
+  simulation.
+
+    # Database - Singleton class that contains all data for current test.
+        - The constructor for this class takes the information from an
+        Input object and copies it into separate classes (e.g. the data from
+        a ChildInputData object will be copied into a Child object, the data
+        from a GiftInputData object will be copied into a Gift object etc.)
+        - For each Child, the constructor also builds the niceScores list
+        where it adds the first niceScore (given as input) and it sets the
+        strategy that will be used to determine this Child's averageScore.
+        - Use getInstance() method to get the unique instance of this class
+        for the current simulation.
+        - Use clearDatabase() method to clear the Database before moving on
+        to the next test.
+
+    # Child - General information about a Child
+        - Apart from the input information, it also contains:
+            ~ the AgeCategory of this child (an Enum), determined using the
+            getAgeCategory() methods existent in both ChildInputData (for the
+            first instantiation) and Child (for further updates).
+            ~ an AverageScoreStrategy - used to compute the averageScore for
+            this Child.
+            ~ the assignedBudget for each Round of the simulation.
+            ~ a list of receivedGifts for each Round of the simulation (this
+            list will be cleared between Rounds).
+
+    - In order to determine the averageScore of a Child, a Strategy pattern
+    is used. First, we assign the appropriate Strategy using a Factory patten,
+    then the Strategy is called to compute the averageScore according to the
+    ageCategory of the Child.
+    - The incrementAge() method updates both the AgeCategory and the Strategy.
+
+
+# strategies
+    This package contains an AverageScoreStrategy interface and 4 different
+  implementations for it, according to the ageCategory of the Child (BABY,
+  KID, TEEN or YOUNG_ADULT).
+
+  # AverageStrategyFactory - Singleton Factory class
+    - Because it is a general type of Factory, there is only 1 instance
+    of this class that will be used across all simulations.
+    - the createStrategy(Child child) method will return the appropriate
+    Strategy for each Child that calls this method.
+
+  # BabyAverageScore - always returns 10.
+
+  # KidAverageScore - returns the average of the Child's niceScores.
+
+  # TeenAverageScore - returns the weighted average of the Child's niceScores.
+
+  # YoungAdultAverageScore - always returns null (the YOUNG_ADULTS do not need
+        an averageScore, because they will not receive Gifts).
+
+  - Relationship: Each Child Has-A AverageScoreStrategy
+
+
+# simulation
+    This package contains classes used to run a Simulation of a period without
+  Santa Claus.
+
+    The "output" package contains classes used to structure the result of the
+  Simulation, in order to use ObjectMapper for writing the result in the form
+  of a JSON file with the desired format.
+
+    # ChildOutput class - contains only the data that will be printed from a
+  Child object.
+    # AnnualChildren - contains a list of ChildOutput (children that received
+  gifts in each Round)
+    # Output - contains a list of AnnualChildren (lists of lists of children
+  that received gifts across the entire simulation of numberOfYears + 1 Rounds)
+
+
+    # Round - Current form of the initial Database
+        - This class implements all methods that will be used to run a
+        Simulation.
+        - The constructor builds Round 0 according to the information from
+        Database. It also removes YOUNG_ADULTS from the list of Children and
+        sorts the lists of Gifts according to their price, in ascending order,
+        so that if Santa has 2 Gifts of the same Category, he will choose the
+        cheapest one of them.
+
+        - the getResults() method builds an AnnualChildren object according
+        to the data in the currentChildrenList.
+
+        - the updateRound(AnnualChange changes) method is used to modify the
+        lists of Children, Gifts and Santa's Budget according to the changes
+        that are given as parameter.
+        It does the following:
+
+    1. Update the ages of each Child. This is done by calling the incrementAge()
+    method for all Children.
+
+    2. Add all new Children in the currentChildrenList.
+
+    3. Add all new Gifts in the currentGiftsList.
+
+    4. Update Santa's budget for this Round.
+
+    5. Iterate through the list of ChildUpdates and apply each ChildUpdate on
+    the Child with the same id.
+       In order to make sure that the newGiftsPreferences are not duplicate, we
+    create a new list for them and add the giftsPreferences from the ChildUpdate
+    first, after which we add the old preferences for this Child.
+       Also add the newNiceScore to this Child's niceScoresList if one has been
+    received.
+
+    5. If any Child has become a YOUNG_ADULT, remove them from the list of
+    currentChildren.
+
+    6. Sort the currentGiftsList again, according to their price in ascending
+    order, so that if there are 2 Gifts with the same Category, the one with
+    lower price will come first.
+
+
+    # Simulation - Main class used for our project
+        - Relationship: a Simulation Has-A Round
+        - the run() method is used to run a Simulation, whose results will be
+        stored in the ArrayList<AnnualChildren> results.
+        It does the following:
+
+  1. Compute the averageScores for each Child in the current childrenList for
+  this Round (This will call the computeAverageScore() method for each Child,
+  which will call the Strategy that the Child uses). At this point, all
+  children will have their averageScore updated.
+
+  2. Compute the budgets for each Child - first, it computes the budgetUnit
+  and then, it assigns budgets to the children according to their averageScores.
+
+  3. Distribute the Gifts for each Child
+        - Clear the list of receivedGifts (these are the Gifts from last
+        year/round).
+        - Iterate through the Categories that each Child prefers and if Santa
+        has a gift from that Category, give it to the Child if there is enough
+        budget for that Gift.
+
+  4. Save the results from the this Round into the Output classes.
+
+  5. Update the Round based on the next AnnualChange and repeat from 1.
+
+  6. Finish when there are no AnnualChanges left (after running numberOfYears
+  updated Rounds).
+
+================================================================================

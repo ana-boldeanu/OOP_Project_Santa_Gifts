@@ -1,4 +1,4 @@
 Starting audit...
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\InputLoader.java:38:5: Method length is 157 lines (max allowed is 150). [MethodLength]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\InputLoader.java:34:5: Method length is 165 lines (max allowed is 150). [MethodLength]
 Audit done.
 Checkstyle ends with 1 errors.

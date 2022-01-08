@@ -1,4 +1,4 @@
-package simulation;
+package simulation.output;
 
 import database.Gift;
 import enums.Category;
@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * This class contains only the information about a Child that is printed to output (Printing
- * required a new class in order to use Jackson)
+ * required a new class in order to use ObjectMapper)
  */
 public final class ChildOutput {
     /**

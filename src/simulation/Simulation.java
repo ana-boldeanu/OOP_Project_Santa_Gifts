@@ -1,5 +1,7 @@
 package simulation;
 
+import simulation.output.AnnualChildren;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +17,7 @@ public final class Simulation {
     /**
      * The results of this simulation
      */
-    private final List<AnnualChildren> annualChildren = new ArrayList<>();
+    private final List<AnnualChildren> results = new ArrayList<>();
 
     public Simulation(final int numberOfYears, final Round round) {
         this.numberOfYears = numberOfYears;
@@ -30,7 +32,7 @@ public final class Simulation {
         round.computeAverageScores();
         round.computeBudgets();
         round.distributeGifts();
-        annualChildren.add(round.getResults());
+        results.add(round.getResults());
 
         // The rest of the rounds
         int currYear = 1;
@@ -39,12 +41,12 @@ public final class Simulation {
             round.computeAverageScores();
             round.computeBudgets();
             round.distributeGifts();
-            annualChildren.add(round.getResults());
+            results.add(round.getResults());
             currYear++;
         }
     }
 
     public List<AnnualChildren> getResults() {
-        return annualChildren;
+        return results;
     }
 }

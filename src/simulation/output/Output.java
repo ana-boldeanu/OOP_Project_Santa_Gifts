@@ -1,13 +1,13 @@
-package simulation;
+package simulation.output;
 
 import java.util.List;
 
 /**
- * Class used to print the results of the Simulations (with Jackson)
+ * Class used to print the results of the Simulation via ObjectMapper
  */
 public final class Output {
     /**
-     * The results of this simulation
+     * The results of this simulation (a list of lists of ChildrenOutput)
      */
     private final List<AnnualChildren> annualChildren;
 

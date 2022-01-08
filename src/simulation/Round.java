@@ -8,6 +8,8 @@ import database.Gift;
 import database.ChildUpdateData;
 import enums.AgeCategory;
 import enums.Category;
+import simulation.output.AnnualChildren;
+import simulation.output.ChildOutput;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,10 +30,6 @@ public final class Round {
      * Santa's budget
      */
     private Double currBudget;
-    /**
-     * Unit used for the current budget
-     */
-    private Double budgetUnit;
     /**
      * List of children
      */
@@ -78,7 +76,8 @@ public final class Round {
             sumAllScores += child.getAverageScore();
         }
 
-        budgetUnit = currBudget / sumAllScores;
+        // Unit used for the current budget
+        Double budgetUnit = currBudget / sumAllScores;
 
         for (Child child : currChildrenList) {
             double childBudget = child.getAverageScore() * budgetUnit;
@@ -139,8 +138,6 @@ public final class Round {
         for (Child child : currChildrenList) {
             child.incrementAge();
         }
-
-        currChildrenList.removeIf(child -> child.getAgeCategory().equals(AgeCategory.YOUNG_ADULT));
     }
 
     /**
@@ -192,10 +189,6 @@ public final class Round {
 
     public Database getDatabase() {
         return database;
-    }
-
-    public int getCurrRound() {
-        return currRound;
     }
 
     @Override
