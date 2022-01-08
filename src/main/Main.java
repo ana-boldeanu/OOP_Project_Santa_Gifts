@@ -3,8 +3,12 @@ package main;
 import checker.Checker;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import common.Constants;
+import database.Database;
 import fileio.Input;
 import fileio.InputLoader;
+import simulation.output.Output;
+import simulation.Round;
+import simulation.Simulation;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,10 +37,10 @@ public final class Main {
             Files.createDirectories(path);
         }
 
-        File outputDirectory = new File(Constants.RESULT_PATH);
-
         for (File file : Objects.requireNonNull(directory.listFiles())) {
-            String filepath = Constants.OUTPUT_PATH + file.getName();
+            String filepath = Constants.OUTPUT_PATH
+                    + file.getName().replaceAll("[^0-9]", "")
+                    + Constants.FILE_EXTENSION;
             action(file.getAbsolutePath(), filepath);
         }
 
@@ -44,6 +48,7 @@ public final class Main {
     }
 
     /**
+     * Method that runs a given test
      * @param filePath1 for input file
      * @param filePath2 for output file
      * @throws IOException in case of exceptions to reading / writing
@@ -52,9 +57,16 @@ public final class Main {
         InputLoader inputLoader = new InputLoader(filePath1);
         Input input = inputLoader.readData();
 
-        String result = input.toString();
+        Database database = Database.getInstance(input);
+        Simulation simulation = new Simulation(database.getNumberOfYears(), new Round(database));
+
+        simulation.run();
+
+        Output output = new Output(simulation.getResults());
 
         ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath2), input);
+        objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath2), output);
+
+        database.clearDatabase();
     }
 }

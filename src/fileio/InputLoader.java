@@ -1,7 +1,6 @@
 package fileio;
 
 import common.Constants;
-import database.AnnualChangesData;
 import database.ChildUpdateData;
 import enums.Category;
 import org.json.simple.JSONArray;
@@ -28,10 +27,6 @@ public final class InputLoader {
         this.inputPath = inputPath;
     }
 
-    public String getInputPath() {
-        return inputPath;
-    }
-
     /**
      * Method that reads from the input test
      * @return an Input object
@@ -47,9 +42,10 @@ public final class InputLoader {
         List<AnnualChangesData> annualChangesList = new ArrayList<>();
 
         try {
-            // Parsing the contents of the JSON file
+            // Parse the contents of the JSON file
             JSONObject jsonObject = (JSONObject) jsonParser.parse(new FileReader(inputPath));
 
+            // Read values for numberOfYears and santaBudget
             numberOfYears = Integer.parseInt(jsonObject.get(Constants.NUMBER_OF_YEARS).toString());
             santaBudget = Double.parseDouble(jsonObject.get(Constants.SANTA_BUDGET).toString());
 
@@ -58,6 +54,7 @@ public final class InputLoader {
             JSONArray jsonGifts = (JSONArray) jsonInitialData.get(Constants.SANTA_GIFTS);
             JSONArray jsonAnnualChanges = (JSONArray) jsonObject.get(Constants.ANNUAL_CHANGES);
 
+            // Build initialChildrenList
             if (jsonChildren != null) {
                 for (Object jsonChild : jsonChildren) {
                     List<Category> giftsPreferences = new ArrayList<>();
@@ -83,6 +80,7 @@ public final class InputLoader {
                 }
             }
 
+            // Build initialSantaGiftsList
             if (jsonGifts != null) {
                 for (Object jsonGift : jsonGifts) {
                     initialSantaGiftsList.add(new GiftInputData(
@@ -94,6 +92,7 @@ public final class InputLoader {
                 }
             }
 
+            // Build annualChangesList
             if (jsonAnnualChanges != null) {
                 for (Object jsonAnnualChange : jsonAnnualChanges) {
                     double newSantaBudget = Double.parseDouble(((JSONObject) jsonAnnualChange)
@@ -102,6 +101,7 @@ public final class InputLoader {
                     List<ChildInputData> newChildrenList = new ArrayList<>();
                     List<ChildUpdateData> childrenUpdates = new ArrayList<>();
 
+                    // Data in each annualChange
                     JSONArray jsonNewGifts =
                             (JSONArray) ((JSONObject) jsonAnnualChange).get(Constants.NEW_GIFTS);
                     JSONArray jsonNewChildren =
@@ -110,6 +110,7 @@ public final class InputLoader {
                             (JSONArray) ((JSONObject) jsonAnnualChange)
                                     .get(Constants.CHILDREN_UPDATES);
 
+                    // Build newGiftsList for current annualChange
                     if (jsonNewGifts != null) {
                         for (Object jsonNewGift : jsonNewGifts) {
                             newGiftsList.add(new GiftInputData(
@@ -122,6 +123,7 @@ public final class InputLoader {
                         }
                     }
 
+                    // Build newChildrenList for current annualChange
                     if (jsonNewChildren != null) {
                         for (Object jsonNewChild : jsonNewChildren) {
                             List<Category> giftsPreferences = new ArrayList<>();
@@ -153,6 +155,7 @@ public final class InputLoader {
                         }
                     }
 
+                    // Build childrenUpdates for current annualChange
                     if (jsonChildrenUpdates != null) {
                         for (Object jsonChildUpdate : jsonChildrenUpdates) {
                             List<Category> newGiftsPreferences = new ArrayList<>();
@@ -167,7 +170,7 @@ public final class InputLoader {
                                 }
                             }
 
-                            double newNiceScore = 0;
+                            Double newNiceScore = null;
                             Object jsonNiceScore = ((JSONObject) jsonChildUpdate)
                                     .get(Constants.NICE_SCORE);
                             if (jsonNiceScore != null) {

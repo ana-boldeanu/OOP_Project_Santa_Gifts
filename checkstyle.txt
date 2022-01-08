@@ -1,11 +1,4 @@
 Starting audit...
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:66:25: '+' should be on a new line. [OperatorWrap]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:67:50: '+' should be on a new line. [OperatorWrap]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:68:48: '+' should be on a new line. [OperatorWrap]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:69:64: '+' should be on a new line. [OperatorWrap]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:70:68: '+' should be on a new line. [OperatorWrap]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\Input.java:71:60: '+' should be on a new line. [OperatorWrap]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\InputLoader.java:39:5: Method length is 157 lines (max allowed is 150). [MethodLength]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\strategies\AverageStrategyFactory.java:30:9: 'switch' is not followed by whitespace. [WhitespaceAround]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\InputLoader.java:34:5: Method length is 165 lines (max allowed is 150). [MethodLength]
 Audit done.
-Checkstyle ends with 8 errors.
+Checkstyle ends with 1 errors.

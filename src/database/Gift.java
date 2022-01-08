@@ -21,4 +21,22 @@ public final class Gift {
         this.price = price;
         this.category = category;
     }
+
+    public String getProductName() {
+        return productName;
+    }
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    @Override
+    public String toString() {
+        return "Gift{" + "productName='" + productName + '\'' + ", price=" + price
+                + ", category=" + category + '}';
+    }
 }
