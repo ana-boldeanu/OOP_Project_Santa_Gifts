@@ -41,7 +41,7 @@ public final class ChildOutput {
     /**
      * Nice Scores (used to compute Average Score)
      */
-    private final List<Double> niceScoresList;
+    private final List<Double> niceScoreHistory;
     /**
      * Santa's budget for this Child in current Round
      */
@@ -62,7 +62,7 @@ public final class ChildOutput {
         this.age = age;
         this.giftsPreferences = giftsPreferences;
         this.averageScore = averageScore;
-        this.niceScoresList = niceScoresList;
+        this.niceScoreHistory = niceScoresList;
         this.assignedBudget = assignedBudget;
         this.receivedGifts = receivedGifts;
     }
@@ -95,8 +95,8 @@ public final class ChildOutput {
         return averageScore;
     }
 
-    public List<Double> getNiceScoresList() {
-        return niceScoresList;
+    public List<Double> getNiceScoreHistory() {
+        return niceScoreHistory;
     }
 
     public Double getAssignedBudget() {
@@ -105,5 +105,13 @@ public final class ChildOutput {
 
     public List<Gift> getReceivedGifts() {
         return receivedGifts;
+    }
+
+    @Override
+    public String toString() {
+        return "ChildOutput{" + "id=" + id + ", lastName='" + lastName + '\'' + ", firstName='"
+                + firstName + '\'' + ", age=" + age + ", giftsPreferences=" + giftsPreferences
+                + ", averageScore=" + averageScore + ", niceScoreHistory=" + niceScoreHistory
+                + ", assignedBudget=" + assignedBudget + ", receivedGifts=" + receivedGifts + '}';
     }
 }

@@ -9,13 +9,13 @@ public final class Output {
     /**
      * The results of this simulation
      */
-    private final List<List<ChildOutput>> results;
+    private final List<AnnualChildren> annualChildren;
 
-    public Output(final List<List<ChildOutput>> results) {
-        this.results = results;
+    public Output(final List<AnnualChildren> annualChildren) {
+        this.annualChildren = annualChildren;
     }
 
-    public List<List<ChildOutput>> getResults() {
-        return results;
+    public List<AnnualChildren> getAnnualChildren() {
+        return annualChildren;
     }
 }

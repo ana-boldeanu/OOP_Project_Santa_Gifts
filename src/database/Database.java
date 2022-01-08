@@ -17,29 +17,28 @@ public final class Database {
     /**
      * Number of years (rounds to run the simulation)
      */
-    private final int numberOfYears;
+    private int numberOfYears;
     /**
      * Santa's initial budget (used in round 0)
      */
-    private final Double initialSantaBudget;
+    private Double initialSantaBudget;
     /**
      * List of children from initialData
      */
-    private final List<Child> initialChildrenList = new ArrayList<>();
+    private List<Child> initialChildrenList = new ArrayList<>();
     /**
      * List of gifts from initialData
      */
-    private final List<Gift> initialSantaGiftsList = new ArrayList<>();
+    private List<Gift> initialSantaGiftsList = new ArrayList<>();
     /**
      * List of annual changes (updates for each round)
      */
-    private final List<AnnualChange> annualChangesList = new ArrayList<>();
+    private List<AnnualChange> annualChangesList = new ArrayList<>();
 
     /**
-     * This class is a Singleton
      * The constructor makes copies of the lists given as Input
      */
-    private Database(final Input input) {
+    public Database(final Input input) {
         this.numberOfYears = input.getNumberOfYears();
         this.initialSantaBudget = input.getSantaBudget();
 
@@ -98,6 +97,16 @@ public final class Database {
             instance = new Database(input);
         }
         return instance;
+    }
+
+    /**
+     * Use this method to clear the current Database before running next Test
+     */
+    public void clearDatabase() {
+        initialChildrenList.clear();
+        initialSantaGiftsList.clear();
+        annualChangesList.clear();
+        instance = null;
     }
 
     public int getNumberOfYears() {

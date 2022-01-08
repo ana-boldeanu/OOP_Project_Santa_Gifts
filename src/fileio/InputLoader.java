@@ -166,7 +166,7 @@ public final class InputLoader {
                                 }
                             }
 
-                            double newNiceScore = 0;
+                            Double newNiceScore = null;
                             Object jsonNiceScore = ((JSONObject) jsonChildUpdate)
                                     .get(Constants.NICE_SCORE);
                             if (jsonNiceScore != null) {

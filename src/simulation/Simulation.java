@@ -15,7 +15,7 @@ public final class Simulation {
     /**
      * The results of this simulation
      */
-    private final List<List<ChildOutput>> results = new ArrayList<>();
+    private final List<AnnualChildren> annualChildren = new ArrayList<>();
 
     public Simulation(final int numberOfYears, final Round round) {
         this.numberOfYears = numberOfYears;
@@ -30,21 +30,21 @@ public final class Simulation {
         round.computeAverageScores();
         round.computeBudgets();
         round.distributeGifts();
-        results.add(round.getResults());
+        annualChildren.add(round.getResults());
 
         // The rest of the rounds
         int currYear = 1;
         while (currYear <= numberOfYears) {
+            round.updateRound(round.getDatabase().getAnnualChangesList().get(currYear - 1));
             round.computeAverageScores();
             round.computeBudgets();
             round.distributeGifts();
-            round.updateRound(round.getDatabase().getAnnualChangesList().get(currYear - 1));
-            results.add(round.getResults());
+            annualChildren.add(round.getResults());
             currYear++;
         }
     }
 
-    public List<List<ChildOutput>> getResults() {
-        return results;
+    public List<AnnualChildren> getResults() {
+        return annualChildren;
     }
 }

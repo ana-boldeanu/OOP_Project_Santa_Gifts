@@ -99,6 +99,13 @@ public final class Child {
     }
 
     /**
+     * Empty the list of Received Gifts for next Round
+     */
+    public void resetReceivedGifts() {
+        this.receivedGifts.clear();
+    }
+
+    /**
      * Add a new NiceScore to this Child's niceScores List
      */
     public void receiveNiceScore(final Double niceScore) {
@@ -111,6 +118,7 @@ public final class Child {
     public void incrementAge() {
         age++;
         updateAgeCategory();
+        setAverageScoreStrategy();
     }
 
     /**
@@ -201,5 +209,14 @@ public final class Child {
 
     public void setReceivedGifts(final List<Gift> receivedGifts) {
         this.receivedGifts = receivedGifts;
+    }
+
+    @Override
+    public String toString() {
+        return "Child{" + "id=" + id + ", lastName='" + lastName + '\'' + ", firstName='"
+                + firstName + '\'' + ", age=" + age + ", ageCategory=" + ageCategory
+                + ", giftsPreferences=" + giftsPreferences + ", niceScoresList=" + niceScoresList
+                + ", averageScore=" + averageScore + ", assignedBudget=" + assignedBudget
+                + ", receivedGifts=" + receivedGifts + '}';
     }
 }

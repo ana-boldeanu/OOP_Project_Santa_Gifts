@@ -44,4 +44,11 @@ public final class AnnualChange {
     public List<ChildUpdateData> getChildrenUpdates() {
         return childrenUpdates;
     }
+
+    @Override
+    public String toString() {
+        return "AnnualChange{" + "newSantaBudget=" + newSantaBudget
+                + ", newGiftsList=" + newGiftsList + ", newChildrenList=" + newChildrenList
+                + ", childrenUpdates=" + childrenUpdates + '}';
+    }
 }

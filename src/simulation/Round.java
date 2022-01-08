@@ -1,6 +1,11 @@
 package simulation;
 
-import database.*;
+
+import database.AnnualChange;
+import database.Child;
+import database.Database;
+import database.Gift;
+import database.ChildUpdateData;
 import enums.AgeCategory;
 import enums.Category;
 
@@ -85,16 +90,20 @@ public final class Round {
      * Distribute Gifts to each Child in this Round
      */
     public void distributeGifts() {
+        // Empty the Lists of receivedGifts
+        for (Child child :currChildrenList) {
+            child.resetReceivedGifts();
+        }
+
+        // Distribute new Gifts
         for (Child child : currChildrenList) {
             double budget = child.getAssignedBudget();
-            double spent = 0.0;
             for (Category category : child.getGiftsPreferences()) {
                 for (Gift gift : currGiftsList) {
                     if (gift.getCategory().equals(category)) {
                         if (gift.getPrice() <= budget) {
                             child.receiveGift(gift);
-                            spent += gift.getPrice();
-                            budget -= spent;
+                            budget -= gift.getPrice();
                         }
                         break;
                     }
@@ -106,17 +115,21 @@ public final class Round {
     /**
      * Return a list of the results regarding Children from this Round
      */
-    public List<ChildOutput> getResults() {
-        List<ChildOutput> results = new ArrayList<>();
+    public AnnualChildren getResults() {
+        List<ChildOutput> annualChildren = new ArrayList<>();
 
         for (Child child : currChildrenList) {
-            results.add(new ChildOutput(child.getId(), child.getFirstName(), child.getLastName(),
-                    child.getCity(), child.getAge(), child.getGiftsPreferences(),
-                    child.getAverageScore(), child.getNiceScoresList(), child.getAssignedBudget(),
-                    child.getReceivedGifts()));
+            List<Category> giftPreferences = new ArrayList<>(child.getGiftsPreferences());
+            List<Gift> receivedGifts = new ArrayList<>(child.getReceivedGifts());
+            List<Double> niceScoresHistory = new ArrayList<>(child.getNiceScoresList());
+
+            annualChildren.add(new ChildOutput(child.getId(), child.getLastName(),
+                    child.getFirstName(), child.getCity(), child.getAge(),
+                    giftPreferences, child.getAverageScore(), niceScoresHistory,
+                    child.getAssignedBudget(), receivedGifts));
         }
 
-        return results;
+        return new AnnualChildren(annualChildren);
     }
 
     /**
@@ -144,15 +157,23 @@ public final class Round {
             int id = childUpdate.getId();
             for (Child child : currChildrenList) {
                 if (child.getId() == id) {
-                    if (childUpdate.getNewGiftsPreferences() != null) {
+                    if (childUpdate.getNewGiftsPreferences().size() != 0) {
                         List<Category> newGiftsPreferences = new ArrayList<>();
-                        newGiftsPreferences.addAll(childUpdate.getNewGiftsPreferences());
-                        newGiftsPreferences.addAll(child.getGiftsPreferences());
+                        for (Category category : childUpdate.getNewGiftsPreferences()) {
+                            if (!newGiftsPreferences.contains(category)) {
+                                newGiftsPreferences.add(category);
+                            }
+                        }
+                        for (Category category : child.getGiftsPreferences()) {
+                            if (!newGiftsPreferences.contains(category)) {
+                                newGiftsPreferences.add(category);
+                            }
+                        }
                         child.setGiftsPreferences(newGiftsPreferences);
                     }
-                }
-                if (childUpdate.getNewNiceScore() != 0) {
-                    child.receiveNiceScore(childUpdate.getNewNiceScore());
+                    if (childUpdate.getNewNiceScore() != null) {
+                        child.receiveNiceScore(childUpdate.getNewNiceScore());
+                    }
                 }
             }
         }
@@ -175,5 +196,12 @@ public final class Round {
 
     public int getCurrRound() {
         return currRound;
+    }
+
+    @Override
+    public String toString() {
+        return "Round{" + "currRound=" + currRound + ", currBudget=" + currBudget
+                + ", currChildrenList=" + currChildrenList
+                + ", currGiftsList=" + currGiftsList + '}';
     }
 }

@@ -40,7 +40,12 @@ public final class Main {
         File outputDirectory = new File(Constants.RESULT_PATH);
 
         for (File file : Objects.requireNonNull(directory.listFiles())) {
-            String filepath = Constants.OUTPUT_PATH + file.getName();
+            String filepath = Constants.OUTPUT_PATH
+                    + file.getName().replaceAll("[^0-9]", "")
+                    + Constants.FILE_EXTENSION;
+            if (filepath.equals("output/out_11.json")) {
+                action(file.getAbsolutePath(), filepath);
+            }
             action(file.getAbsolutePath(), filepath);
         }
 
@@ -48,6 +53,7 @@ public final class Main {
     }
 
     /**
+     * Method that runs a given test
      * @param filePath1 for input file
      * @param filePath2 for output file
      * @throws IOException in case of exceptions to reading / writing
@@ -65,5 +71,7 @@ public final class Main {
 
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.writerWithDefaultPrettyPrinter().writeValue(new File(filePath2), output);
+
+        database.clearDatabase();
     }
 }
