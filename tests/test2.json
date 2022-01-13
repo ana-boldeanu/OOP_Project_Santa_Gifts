@@ -14,7 +14,9 @@
           "Technology",
           "Toys",
           "Clothes"
-        ]
+        ],
+        "niceScoreBonus": 0,
+        "elf": "white"
       },
       {
         "id": 1,
@@ -26,7 +28,9 @@
         "giftsPreferences": [
           "Books",
           "Board Games"
-        ]
+        ],
+        "niceScoreBonus": 0,
+        "elf": "white"
       },
       {
         "id": 2,
@@ -38,7 +42,9 @@
         "giftsPreferences": [
           "Books",
           "Clothes"
-        ]
+        ],
+        "niceScoreBonus": 0,
+        "elf": "white"
       },
       {
         "id": 3,
@@ -50,70 +56,158 @@
         "giftsPreferences": [
           "Books",
           "Board Games"
-        ]
+        ],
+        "niceScoreBonus": 0,
+        "elf": "white"
       }
     ],
     "santaGiftsList": [
       {
         "productName": "Shoes",
         "price": 70,
-        "category": "Clothes"
+        "category": "Clothes",
+        "quantity": 4
       },
       {
         "productName": "Lego",
         "price": 30,
-        "category": "Toys"
+        "category": "Toys",
+        "quantity": 6
       },
       {
         "productName": "Handbag",
         "price": 200,
-        "category": "Clothes"
+        "category": "Clothes",
+        "quantity": 9
       },
       {
         "productName": "Teddy Bear",
         "price": 10,
-        "category": "Toys"
+        "category": "Toys",
+        "quantity": 6
       },
       {
         "productName": "Diary of a Wimpy Kid",
         "price": 25,
-        "category": "Books"
+        "category": "Books",
+        "quantity": 7
       },
       {
         "productName": "Monopoly",
         "price": 30,
-        "category": "Board Games"
+        "category": "Board Games",
+        "quantity": 6
       },
       {
         "productName": "Iphone",
         "price": 700,
-        "category": "Technology"
+        "category": "Technology",
+        "quantity": 6
       },
       {
         "productName": "Puzzle",
         "price": 50,
-        "category": "Board Games"
+        "category": "Board Games",
+        "quantity": 7
       }
     ]
   },
   "annualChanges": [
     {
-      "newSantaBudget": 1467,
+      "newSantaBudget": 1293,
       "newGifts": [],
       "newChildren": [],
-      "childrenUpdates": []
-    },
-    {
-      "newSantaBudget": 1798,
-      "newGifts": [],
-      "newChildren": [],
-      "childrenUpdates": []
+      "childrenUpdates": [
+        {
+          "id": 0,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 1,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 2,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 3,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        }
+      ],
+      "strategy": "id"
     },
     {
       "newSantaBudget": 1293,
       "newGifts": [],
       "newChildren": [],
-      "childrenUpdates": []
+      "childrenUpdates": [
+        {
+          "id": 0,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 1,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 2,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 3,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        }
+      ],
+      "strategy": "id"
+    },
+    {
+      "newSantaBudget": 1293,
+      "newGifts": [],
+      "newChildren": [],
+      "childrenUpdates": [
+        {
+          "id": 0,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 1,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 2,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        },
+        {
+          "id": 3,
+          "niceScore": 10,
+          "giftsPreferences": [],
+          "elf": "white"
+        }
+      ],
+      "strategy": "id"
     }
   ]
 }

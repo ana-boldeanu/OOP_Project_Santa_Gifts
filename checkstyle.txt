@@ -1,4 +1,9 @@
 Starting audit...
+[ERROR] D:\GitHub\POO_Proiect1\.\src\checker\Checker.java:9:1: Utility classes should not have a public or default constructor. [HideUtilityClassConstructor]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\checker\Checker.java:35:30: '19' is a magic number. [MagicNumber]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\checker\Checker.java:101:49: '15' is a magic number. [MagicNumber]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\checker\Checker.java:101:55: '3' is a magic number. [MagicNumber]
+[ERROR] D:\GitHub\POO_Proiect1\.\src\checker\Checker.java:101:59: '4' is a magic number. [MagicNumber]
 [ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\InputLoader.java:34:5: Method length is 165 lines (max allowed is 150). [MethodLength]
 Audit done.
-Checkstyle ends with 1 errors.
+Checkstyle ends with 6 errors.
