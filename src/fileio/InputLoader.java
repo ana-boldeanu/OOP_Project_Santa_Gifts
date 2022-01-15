@@ -193,7 +193,9 @@ public final class InputLoader {
                             childrenUpdates.add(new ChildUpdateData(
                                     Integer.parseInt(((JSONObject) jsonChildUpdate)
                                             .get(Constants.ID).toString()),
-                                    newNiceScore, newGiftsPreferences));
+                                    newNiceScore, newGiftsPreferences,
+                                    Utils.stringToElves(((JSONObject) jsonChildUpdate)
+                                            .get(Constants.ELF).toString())));
                         }
                     }
 

@@ -1,6 +1,7 @@
 package database;
 
 import enums.Category;
+import enums.ElvesType;
 
 import java.util.List;
 
@@ -20,12 +21,18 @@ public final class ChildUpdateData {
      * New List of Gifts preferences to be added
      */
     private final List<Category> newGiftsPreferences;
+    /**
+     * Elf Type
+     */
+    private final ElvesType newElfType;
 
     public ChildUpdateData(final int id, final Double newNiceScore,
-                           final List<Category> newGiftsPreferences) {
+                           final List<Category> newGiftsPreferences,
+                           final ElvesType newElfType) {
         this.id = id;
         this.newNiceScore = newNiceScore;
         this.newGiftsPreferences = newGiftsPreferences;
+        this.newElfType = newElfType;
     }
 
     public int getId() {
@@ -38,5 +45,9 @@ public final class ChildUpdateData {
 
     public List<Category> getNewGiftsPreferences() {
         return newGiftsPreferences;
+    }
+
+    public ElvesType getNewElfType() {
+        return newElfType;
     }
 }

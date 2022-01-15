@@ -70,7 +70,7 @@ public final class Child {
     /**
      * Elf Type
      */
-    private final ElvesType elfType;
+    private ElvesType elfType;
 
     public Child(final int id, final String lastName, final String firstName, final int age,
                  final AgeCategory ageCategory, final String city,
@@ -213,6 +213,10 @@ public final class Child {
 
     public ElvesType getElfType() {
         return elfType;
+    }
+
+    public void setElfType(ElvesType elfType) {
+        this.elfType = elfType;
     }
 
     public void setAge(final int age) {

@@ -10,6 +10,7 @@ import simulation.output.AnnualChildren;
 import simulation.output.ChildOutput;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -103,11 +104,11 @@ public final class Round {
             double childBudget = child.getAverageScore() * budgetUnit;
 
             // Apply BLACK or PINK elves bonuses
-            switch (child.getElfType()) {
-                case BLACK -> childBudget -= childBudget * 30 / 100;
-                case PINK -> childBudget += childBudget * 30 / 100;
-                default -> {
-                }
+            if (child.getElfType().equals(ElvesType.BLACK)) {
+                childBudget -= childBudget * 30 / 100;
+
+            } else if (child.getElfType().equals(ElvesType.PINK)) {
+                childBudget += childBudget * 30 / 100;
             }
 
             child.setAssignedBudget(childBudget);
@@ -158,6 +159,7 @@ public final class Round {
                             child.receiveGift(new ReceivedGift(gift.getProductName(),
                                     gift.getPrice(), gift.getCategory()));
                             gift.decreaseQuantity();
+                            break;
                         } else {
                             // The cheapest Gift is out of stock
                             break;
@@ -185,6 +187,13 @@ public final class Round {
                     child.getAssignedBudget(), receivedGifts));
         }
 
+        annualChildren.sort(new Comparator<ChildOutput>() {
+            @Override
+            public int compare(ChildOutput o1, ChildOutput o2) {
+                return Integer.compare(o1.getId(), o2.getId());
+            }
+        });
+
         return new AnnualChildren(annualChildren);
     }
 
@@ -207,6 +216,7 @@ public final class Round {
         currGiftsList.addAll(changes.getNewGiftsList());
         currBudget = changes.getNewSantaBudget();
 
+        // Apply ChildUpdates
         for (ChildUpdateData childUpdate : changes.getChildrenUpdates()) {
             int id = childUpdate.getId();
             for (Child child : currChildrenList) {
@@ -227,6 +237,9 @@ public final class Round {
                     }
                     if (childUpdate.getNewNiceScore() != null) {
                         child.receiveNiceScore(childUpdate.getNewNiceScore());
+                    }
+                    if (childUpdate.getNewElfType() != null) {
+                        child.setElfType(childUpdate.getNewElfType());
                     }
                 }
             }
