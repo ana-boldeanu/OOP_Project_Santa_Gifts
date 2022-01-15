@@ -2,7 +2,7 @@ package database;
 
 import enums.Category;
 
-public final class Gift {
+public class ReceivedGift {
     /**
      * Name of the gift
      */
@@ -16,7 +16,7 @@ public final class Gift {
      */
     private final Category category;
 
-    public Gift(final String productName, final Double price, final Category category) {
+    public ReceivedGift(String productName, Double price, Category category) {
         this.productName = productName;
         this.price = price;
         this.category = category;
@@ -36,7 +36,7 @@ public final class Gift {
 
     @Override
     public String toString() {
-        return "Gift{" + "productName='" + productName + '\'' + ", price=" + price
+        return "ReceivedGift{" + "productName='" + productName + '\'' + ", price=" + price
                 + ", category=" + category + '}';
     }
 }

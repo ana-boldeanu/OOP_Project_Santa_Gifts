@@ -1,4 +1,4 @@
-package strategies;
+package score_strategies;
 
 public final class YoungAdultAverageScore implements AverageScoreStrategy {
     @Override

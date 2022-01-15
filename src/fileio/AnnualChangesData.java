@@ -24,14 +24,20 @@ public final class AnnualChangesData {
      * List of updates for some Children
      */
     private final List<ChildUpdateData> childrenUpdates;
+    /**
+     * Strategy used to distribute Gifts
+     */
+    private final String distributionStrategy;
 
     public AnnualChangesData(final double newSantaBudget, final List<GiftInputData> newGiftsList,
                              final List<ChildInputData> newChildrenList,
-                             final List<ChildUpdateData> childrenUpdates) {
+                             final List<ChildUpdateData> childrenUpdates,
+                             final String distributionStrategy) {
         this.newSantaBudget = newSantaBudget;
         this.newGiftsList = newGiftsList;
         this.newChildrenList = newChildrenList;
         this.childrenUpdates = childrenUpdates;
+        this.distributionStrategy = distributionStrategy;
     }
 
     public double getNewSantaBudget() {
@@ -48,5 +54,9 @@ public final class AnnualChangesData {
 
     public List<ChildUpdateData> getChildrenUpdates() {
         return childrenUpdates;
+    }
+
+    public String getDistributionStrategy() {
+        return distributionStrategy;
     }
 }

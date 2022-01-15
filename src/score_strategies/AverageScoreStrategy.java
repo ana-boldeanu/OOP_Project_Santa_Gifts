@@ -1,4 +1,4 @@
-package strategies;
+package score_strategies;
 
 public interface AverageScoreStrategy {
     /**

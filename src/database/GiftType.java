@@ -1,12 +1,8 @@
-package fileio;
+package database;
 
 import enums.Category;
 
-/**
- * Input information about a Gift.
- * Do not modify.
- */
-public final class GiftInputData {
+public final class GiftType {
     /**
      * Name of the gift
      */
@@ -24,8 +20,8 @@ public final class GiftInputData {
      */
     private final int quantity;
 
-    public GiftInputData(final String productName, final Double price, final Category category,
-                         final int quantity) {
+    public GiftType(final String productName, final Double price, final Category category,
+                    final int quantity) {
         this.productName = productName;
         this.price = price;
         this.category = category;
@@ -46,5 +42,11 @@ public final class GiftInputData {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    @Override
+    public String toString() {
+        return "Gift{" + "productName='" + productName + '\'' + ", price=" + price
+                + ", category=" + category + ", quantity=" + quantity + '}';
     }
 }

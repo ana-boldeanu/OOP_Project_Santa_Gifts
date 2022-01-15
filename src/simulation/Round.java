@@ -1,11 +1,7 @@
 package simulation;
 
 
-import database.AnnualChange;
-import database.Child;
-import database.Database;
-import database.Gift;
-import database.ChildUpdateData;
+import database.*;
 import enums.AgeCategory;
 import enums.Category;
 import simulation.output.AnnualChildren;
@@ -37,7 +33,7 @@ public final class Round {
     /**
      * List of gifts from initialData
      */
-    private final List<Gift> currGiftsList = new ArrayList<>();
+    private final List<GiftType> currGiftsList = new ArrayList<>();
 
     public Round(final Database database) {
         this.database = database;
@@ -98,10 +94,11 @@ public final class Round {
         for (Child child : currChildrenList) {
             double budget = child.getAssignedBudget();
             for (Category category : child.getGiftsPreferences()) {
-                for (Gift gift : currGiftsList) {
+                for (GiftType gift : currGiftsList) {
                     if (gift.getCategory().equals(category)) {
                         if (gift.getPrice() <= budget) {
-                            child.receiveGift(gift);
+                            child.receiveGift(new ReceivedGift(gift.getProductName(),
+                                    gift.getPrice(), gift.getCategory()));
                             budget -= gift.getPrice();
                         }
                         break;
@@ -119,7 +116,7 @@ public final class Round {
 
         for (Child child : currChildrenList) {
             List<Category> giftPreferences = new ArrayList<>(child.getGiftsPreferences());
-            List<Gift> receivedGifts = new ArrayList<>(child.getReceivedGifts());
+            List<ReceivedGift> receivedGifts = new ArrayList<>(child.getReceivedGifts());
             List<Double> niceScoresHistory = new ArrayList<>(child.getNiceScoresList());
 
             annualChildren.add(new ChildOutput(child.getId(), child.getLastName(),

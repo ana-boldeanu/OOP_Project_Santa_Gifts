@@ -1,6 +1,7 @@
 package fileio;
 
 import enums.Category;
+import enums.ElvesType;
 
 /**
  * Utility Class
@@ -19,6 +20,19 @@ public final class Utils {
             case "Sweets" -> Category.SWEETS;
             case "Technology" -> Category.TECHNOLOGY;
             case "Toys" -> Category.TOYS;
+            default -> null;
+        };
+    }
+
+    /**
+     * Convert a String value to an ElvesType Enum
+     */
+    public static ElvesType stringToElves(final String elf) {
+        return switch (elf) {
+            case "yellow" -> ElvesType.YELLOW;
+            case "black" -> ElvesType.BLACK;
+            case "pink" -> ElvesType.PINK;
+            case "white" -> ElvesType.WHITE;
             default -> null;
         };
     }

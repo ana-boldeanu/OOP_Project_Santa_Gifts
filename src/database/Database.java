@@ -1,5 +1,6 @@
 package database;
 
+import distribution_strategies.DistributionStrategyFactory;
 import enums.Category;
 import fileio.AnnualChangesData;
 import fileio.ChildInputData;
@@ -29,7 +30,7 @@ public final class Database {
     /**
      * List of gifts from initialData
      */
-    private final List<Gift> initialSantaGiftsList = new ArrayList<>();
+    private final List<GiftType> initialSantaGiftsList = new ArrayList<>();
     /**
      * List of annual changes (updates for each round)
      */
@@ -50,7 +51,7 @@ public final class Database {
 
             Child newChild = new Child(child.getId(), child.getLastName(),
                     child.getFirstName(), child.getAge(), child.getAgeCategory(), child.getCity(),
-                    giftsPreferences, niceScores);
+                    giftsPreferences, niceScores, child.getNiceScoreBonus(), child.getElfType());
             // Set the averageScore Strategy for this Child
             newChild.setAverageScoreStrategy();
 
@@ -59,14 +60,14 @@ public final class Database {
 
         // Build the list of Gift objects
         for (GiftInputData gift : input.getInitialSantaGiftsList()) {
-            initialSantaGiftsList.add(new Gift(gift.getProductName(), gift.getPrice(),
-                    gift.getCategory()));
+            initialSantaGiftsList.add(new GiftType(gift.getProductName(), gift.getPrice(),
+                    gift.getCategory(), gift.getQuantity()));
         }
 
         // Build the list of AnnualChange objects
         for (AnnualChangesData annualChange : input.getAnnualChangesList()) {
             List<Child> newChildrenList = new ArrayList<>();
-            List<Gift> newGiftsList = new ArrayList<>();
+            List<GiftType> newGiftsList = new ArrayList<>();
 
             for (ChildInputData child : annualChange.getNewChildrenList()) {
                 List<Category> giftsPreferences = new ArrayList<>(child.getGiftsPreferences());
@@ -75,7 +76,8 @@ public final class Database {
 
                 Child newChild = new Child(child.getId(), child.getLastName(),
                         child.getFirstName(), child.getAge(), child.getAgeCategory(),
-                        child.getCity(), giftsPreferences, niceScores);
+                        child.getCity(), giftsPreferences, niceScores, child.getNiceScoreBonus(),
+                        child.getElfType());
                 // Set the averageScore Strategy for this Child
                 newChild.setAverageScoreStrategy();
 
@@ -83,12 +85,15 @@ public final class Database {
             }
 
             for (GiftInputData gift : annualChange.getNewGiftsList()) {
-                newGiftsList.add(new Gift(gift.getProductName(), gift.getPrice(),
-                        gift.getCategory()));
+                newGiftsList.add(new GiftType(gift.getProductName(), gift.getPrice(),
+                        gift.getCategory(), gift.getQuantity()));
             }
 
+            DistributionStrategyFactory strategyFactory = new DistributionStrategyFactory();
+
             annualChangesList.add(new AnnualChange(annualChange.getNewSantaBudget(),
-                    newGiftsList, newChildrenList, annualChange.getChildrenUpdates()));
+                    newGiftsList, newChildrenList, annualChange.getChildrenUpdates(),
+                    strategyFactory.createStrategy(annualChange.getDistributionStrategy())));
         }
     }
 
@@ -124,7 +129,7 @@ public final class Database {
         return initialChildrenList;
     }
 
-    public List<Gift> getInitialSantaGiftsList() {
+    public List<GiftType> getInitialSantaGiftsList() {
         return initialSantaGiftsList;
     }
 

@@ -3,8 +3,9 @@ package database;
 import common.Constants;
 import enums.AgeCategory;
 import enums.Category;
-import strategies.AverageScoreStrategy;
-import strategies.AverageStrategyFactory;
+import enums.ElvesType;
+import score_strategies.AverageScoreStrategy;
+import score_strategies.AverageStrategyFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,11 +62,20 @@ public final class Child {
     /**
      * Gifts that this Child received in current Round
      */
-    private List<Gift> receivedGifts = new ArrayList<>();
+    private List<ReceivedGift> receivedGifts = new ArrayList<>();
+    /**
+     * Nice Score Bonus
+     */
+    private final Double niceScoreBonus;
+    /**
+     * Elf Type
+     */
+    private final ElvesType elfType;
 
     public Child(final int id, final String lastName, final String firstName, final int age,
                  final AgeCategory ageCategory, final String city,
-                 final List<Category> giftsPreferences, final List<Double> niceScoresList) {
+                 final List<Category> giftsPreferences, final List<Double> niceScoresList,
+                 final Double niceScoreBonus, final ElvesType elfType) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -74,6 +84,8 @@ public final class Child {
         this.city = city;
         this.giftsPreferences = giftsPreferences;
         this.niceScoresList = niceScoresList;
+        this.niceScoreBonus = niceScoreBonus;
+        this.elfType = elfType;
     }
 
     /**
@@ -94,7 +106,7 @@ public final class Child {
     /**
      * Add a Gift to this Child's receivedGifts List
      */
-    public void receiveGift(final Gift gift) {
+    public void receiveGift(final ReceivedGift gift) {
         this.receivedGifts.add(gift);
     }
 
@@ -183,8 +195,16 @@ public final class Child {
         return assignedBudget;
     }
 
-    public List<Gift> getReceivedGifts() {
+    public List<ReceivedGift> getReceivedGifts() {
         return receivedGifts;
+    }
+
+    public Double getNiceScoreBonus() {
+        return niceScoreBonus;
+    }
+
+    public ElvesType getElfType() {
+        return elfType;
     }
 
     public void setAge(final int age) {
@@ -207,7 +227,7 @@ public final class Child {
         this.assignedBudget = assignedBudget;
     }
 
-    public void setReceivedGifts(final List<Gift> receivedGifts) {
+    public void setReceivedGifts(final List<ReceivedGift> receivedGifts) {
         this.receivedGifts = receivedGifts;
     }
 
@@ -217,6 +237,7 @@ public final class Child {
                 + firstName + '\'' + ", age=" + age + ", ageCategory=" + ageCategory
                 + ", giftsPreferences=" + giftsPreferences + ", niceScoresList=" + niceScoresList
                 + ", averageScore=" + averageScore + ", assignedBudget=" + assignedBudget
-                + ", receivedGifts=" + receivedGifts + '}';
+                + ", receivedGifts=" + receivedGifts + ", niceScoreBonus=" + niceScoreBonus
+                + ", elfType=" + elfType + '}';
     }
 }
