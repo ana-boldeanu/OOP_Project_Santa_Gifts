@@ -104,7 +104,7 @@ public final class Child {
         averageScore = averageScoreStrategy.getScore();
 
         // Add the niceScoreBonus
-        averageScore += averageScore * niceScoreBonus / 100;
+        averageScore += averageScore * niceScoreBonus / Constants.PERCENT;
 
         if (averageScore > Constants.MAX_AVERAGE_SCORE) {
             averageScore = Constants.MAX_AVERAGE_SCORE;

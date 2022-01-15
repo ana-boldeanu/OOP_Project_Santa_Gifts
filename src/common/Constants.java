@@ -47,6 +47,7 @@ public final class Constants {
     public static final double MAX_AVERAGE_SCORE = 10.0;
     public static final int BLACK_ELF_PERCENTAGE = 30;
     public static final int PINK_ELF_PERCENTAGE = 30;
+    public static final int PERCENT = 100;
 
     private Constants() {
         // Constructor for checkstyle

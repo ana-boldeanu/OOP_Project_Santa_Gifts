@@ -96,7 +96,7 @@ public final class Round {
     }
 
     /**
-     * Compute the budgetUnit and all assignedBudgets for each Child in this Round
+     * Compute all assignedBudgets for each Child in this Round
      */
     public void computeBudgets() {
         double sumAllScores = 0.0;
@@ -113,10 +113,12 @@ public final class Round {
 
             // Apply BLACK or PINK elves bonuses
             if (child.getElfType().equals(ElvesType.BLACK)) {
-                childBudget -= childBudget * Constants.BLACK_ELF_PERCENTAGE / 100;
+                childBudget -= childBudget
+                        * Constants.BLACK_ELF_PERCENTAGE / Constants.PERCENT;
 
             } else if (child.getElfType().equals(ElvesType.PINK)) {
-                childBudget += childBudget * Constants.PINK_ELF_PERCENTAGE / 100;
+                childBudget += childBudget
+                        * Constants.PINK_ELF_PERCENTAGE / Constants.PERCENT;
             }
 
             child.setAssignedBudget(childBudget);
@@ -156,6 +158,13 @@ public final class Round {
         }
 
         // Apply YELLOW elf bonus
+        yellowElfBonusGifts();
+    }
+
+    /**
+     * Apply the YELLOW Elf bonus after regular Gifts distribution
+     */
+    public void yellowElfBonusGifts() {
         for (Child child : currChildrenList) {
             if (child.getElfType().equals(ElvesType.YELLOW)
                     && child.getReceivedGifts().isEmpty()) {
@@ -167,11 +176,9 @@ public final class Round {
                             child.receiveGift(new ReceivedGift(gift.getProductName(),
                                     gift.getPrice(), gift.getCategory()));
                             gift.decreaseQuantity();
-                            break;
-                        } else {
-                            // The cheapest Gift is out of stock
-                            break;
-                        }
+
+                        } // else The cheapest Gift is out of stock
+                        break;
                     }
                 }
             }
@@ -229,6 +236,7 @@ public final class Round {
             int id = childUpdate.getId();
             for (Child child : currChildrenList) {
                 if (child.getId() == id) {
+                    // Update the new giftsPreferences for this Child
                     if (childUpdate.getNewGiftsPreferences().size() != 0) {
                         List<Category> newGiftsPreferences = new ArrayList<>();
                         for (Category category : childUpdate.getNewGiftsPreferences()) {
@@ -243,9 +251,13 @@ public final class Round {
                         }
                         child.setGiftsPreferences(newGiftsPreferences);
                     }
+
+                    // Add the new niceScore to this Child's list of niceScores
                     if (childUpdate.getNewNiceScore() != null) {
                         child.receiveNiceScore(childUpdate.getNewNiceScore());
                     }
+
+                    // Assign the new Elf to this Child
                     if (childUpdate.getNewElfType() != null) {
                         child.setElfType(childUpdate.getNewElfType());
                     }

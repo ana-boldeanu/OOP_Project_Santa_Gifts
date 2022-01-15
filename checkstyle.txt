@@ -1,7 +1,2 @@
 Starting audit...
-[ERROR] D:\GitHub\POO_Proiect1\.\src\database\Child.java:107:57: '100' is a magic number. [MagicNumber]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\fileio\InputLoader.java:34:5: Method length is 181 lines (max allowed is 150). [MethodLength]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\simulation\Round.java:116:79: '100' is a magic number. [MagicNumber]
-[ERROR] D:\GitHub\POO_Proiect1\.\src\simulation\Round.java:119:78: '100' is a magic number. [MagicNumber]
 Audit done.
-Checkstyle ends with 4 errors.

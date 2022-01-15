@@ -4,32 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="Updated ChildUpdateData class w/ newElfType">
+    <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="Cute updates for Checkstyle">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proiect1/checker/Checker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/checker/Checker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/proiect1/common/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/common/Constants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/Utils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Child.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/CityScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/CityScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/GiftType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/GiftType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/ReceivedGift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/ReceivedGift.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/ElvesType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/ElvesType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/score_strategies/AverageScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/AverageScoreStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/score_strategies/AverageStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/AverageStrategyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/score_strategies/BabyAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/BabyAverageScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/score_strategies/KidAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/KidAverageScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/score_strategies/TeenAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/TeenAverageScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/score_strategies/YoungAdultAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/strategies/YoungAdultAverageScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/ChildrenSorter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/ChildrenSorter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/fileio/InputLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/InputLoader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/simulation/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/output/ChildOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/output/ChildOutput.java" afterDir="false" />
     </list>
     <list id="0675eeb6-cf95-4921-b816-565db58721ee" name="out_test" comment="out_test" />
     <option name="SHOW_DIALOG" value="false" />
@@ -173,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642272220938</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Cute updates for Checkstyle">
+      <created>1642273907897</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1642273907897</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -200,7 +190,8 @@
     <MESSAGE value="Added new fields and adapted InputLoader" />
     <MESSAGE value="Added Elf bonuses and ChildrenSorter class" />
     <MESSAGE value="Updated ChildUpdateData class w/ newElfType" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ChildUpdateData class w/ newElfType" />
+    <MESSAGE value="Cute updates for Checkstyle" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cute updates for Checkstyle" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
