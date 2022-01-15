@@ -47,8 +47,4 @@ public final class CityScore {
     public Double getAverageScore() {
         return averageScore;
     }
-
-    public void setAverageScore(final Double averageScore) {
-        this.averageScore = averageScore;
-    }
 }

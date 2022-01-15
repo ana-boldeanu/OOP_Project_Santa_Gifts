@@ -1,27 +1,88 @@
 // Boldeanu Ana-Maria
 // Group 321CD
-// OOP Project 2021 - Stage 1
+// OOP Project 2021 - Stage 2
+
+============================== Stage 2 Additions ===============================
+
+(Because the overall approach is the same, I kept the old version of this README.
+Scroll down to see it. In this section, I only explain the updates).
+
+    I. Changes to Input and General Information classes
+
+- New fields in Child & ChildInputData classes: "niceScoreBonus" (Double) and
+    "elfType" (ElvesType).
+- New field in GiftInputData class: "quantity" (int).
+- New field in AnnualChangesData & AnnualChange classes:
+    "distributionStrategy" (String).
+- New field in ChildUpdateData class: "newElfType" (ElvesType).
+
+- The old Gift class needed to be separated in 2:
+    - GiftType contains the extra field "quantity" and will be used to determine
+    which Gifts are still available in Santa's deposit.
+    - ReceivedGift does not contain the "quantity" field and will be used to
+    determine which Gifts a Child has received so far (i.e. receivedGifts List).
+
+(NEW) In Round.distributeGifts(), every time a Child receives a Gift, we build a
+    ReceivedGift object, based on the data from GiftType, and we add it to the
+    Child's list. Also, added method to decrease the quantity of a GiftType.
+
+- The constructors for Child, GiftType, AnnualChange & ChildUpdateData needed
+    to be updated containing the new fields.
+- The constructor for Database and the constructors used in InputLoader.readData()
+    have been updated with regard to the above changes.
+
+(NEW) Added a CityScore class in package "database":
+    - This class contains the Cities Enum (name) and the averageScore for a City,
+    and also a method to compute that averageScore.
+    - CityScore is used in Round, where it is needed to sort the Cities by their
+    averageScore.
+
+- New field in Round: "currCityScores" - List of all the Cities, containing their
+    score. They are all added & initialized with 0 in the Round constructor.
 
 
-Stage 2 changes:
-    1. Added "niceScoreBonus" and "elfType" fields to Child and ChildInputData classes
-    2. Added "quantity" to GiftInputData class
-    3. General info about a Gift is now GiftType
-    4. Added ReceivedGift class to be used in Child's receivedGifts list (so that it doesn't
-    contain the quantity field)
-    5. Added DistributionStrategy field to AnnualChange class
-    6. Updated Database constructor to reflect above changes
-    7. Updated Child receiveGift() method to reflect above changes
+    II. Changes to the flow of the simulation
 
-    8. Updated Round distributeGifts() using Gift decreaseQuantity() method  and quantity check
-    9. Updated Child computeAverageScore() method
-    10. Updated Round computeBudgets() adding switch case for BLACK and PINK elves
-    11. Updated Round distributeGifts() adding YELLOW elf bonus
+Thanks to the previous implementation of the Round & Simulation classes, the
+    methods only needed to be updated in the Round class. But even here, most
+    of the old methods remained the same or had minor additions.
 
-    12. added HashMap for remembering averageScores for each City in Round constructor
-    13. added computeCityScores() method
+(NEW) In Child.computeAverageScore(), also add the niceScoreBonus and trim the
+    final results if it's above MAX_AVERAGE_SCORE.
 
+(NEW) Added method in Round to compute the averageScores for all the Cities, based
+    on the averageScores of the currentChildren that live in them.
+
+(NEW) In Round.computeBudgets(), added if-else-if clause to check & apply the BLACK
+    and PINK elf bonuses after computing the budget for each Child.
+
+(NEW) Round.distributeGifts() now receives a parameter, String distributionStrategy,
+    which is given from our Input. It uses this parameter to sort the current
+    ChildrenList before distributing the Gifts for the current Round.
+
+(NEW) Added ChildrenSorter class that has a method to sort a childrenList according
+    to the desired distributionStrategy. The method returns the sorted list.
+    - For sortById and sortByChildScore, it just sorts the list and returns it.
+    - For sortByCityScore, it builds a new list doing the following:
+  1. Sort the cityScores list from current Round, according to the averageScore
+    of the Cities.
+  2. Create a new list that will contain the sortedChildren.
+  3. Iterate through the sorted cityScores, building a sublist that contains the
+    Children that live in every City, sort that sublist by the ID of the Children
+    and then add it to the sortedChildren list.
+    - This way, the Children will be visited in the order of the averageScores of
+    the Cities they live in.
+
+(NEW) Added a new method in Round to apply the YELLOW elf bonus after the regular
+    distribution of the Gifts: yellowElfBonusGifts().
+
+- In Simulation.run(), added just two lines to execute the computeBudgets() method.
+    Everything else stays the same. There are no changes to Main, either.
+
+
+============================= README from Stage 1 ==============================
 ============================ Components & Approach =============================
+
 # main
     * Main - Entry point for testing. To run a test, the method action() does
     the following:
