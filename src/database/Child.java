@@ -100,7 +100,15 @@ public final class Child {
      * Use this Child's Strategy to compute their averageScore
      */
     public void computeAverageScore() {
-        this.averageScore = averageScoreStrategy.getScore();
+        // Compute score using a Strategy
+        averageScore = averageScoreStrategy.getScore();
+
+        // Add the niceScoreBonus
+        averageScore += averageScore * niceScoreBonus / 100;
+
+        if (averageScore > 10.0) {
+            averageScore = 10.0;
+        }
     }
 
     /**

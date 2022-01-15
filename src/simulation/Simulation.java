@@ -1,5 +1,6 @@
 package simulation;
 
+import database.AnnualChange;
 import simulation.output.AnnualChildren;
 
 import java.util.ArrayList;
@@ -30,17 +31,21 @@ public final class Simulation {
     public void run() {
         // Round 0
         round.computeAverageScores();
+        round.computeCityScores();
         round.computeBudgets();
-        round.distributeGifts();
+        round.distributeGifts("id");
         results.add(round.getResults());
 
         // The rest of the rounds
         int currYear = 1;
         while (currYear <= numberOfYears) {
-            round.updateRound(round.getDatabase().getAnnualChangesList().get(currYear - 1));
+            AnnualChange annualChange =
+                    round.getDatabase().getAnnualChangesList().get(currYear - 1);
+            round.updateRound(annualChange);
             round.computeAverageScores();
+            round.computeCityScores();
             round.computeBudgets();
-            round.distributeGifts();
+            round.distributeGifts(annualChange.getDistributionStrategy());
             results.add(round.getResults());
             currYear++;
         }

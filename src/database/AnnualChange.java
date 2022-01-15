@@ -1,7 +1,5 @@
 package database;
 
-import distribution_strategies.DistributionStrategy;
-
 import java.util.List;
 
 public final class AnnualChange {
@@ -24,12 +22,12 @@ public final class AnnualChange {
     /**
      * Strategy used to distribute Gifts
      */
-    private final DistributionStrategy distributionStrategy;
+    private final String distributionStrategy;
 
     public AnnualChange(final double newSantaBudget, final List<GiftType> newGiftsList,
                         final List<Child> newChildrenList,
                         final List<ChildUpdateData> childrenUpdates,
-                        final DistributionStrategy distributionStrategy) {
+                        final String distributionStrategy) {
         this.newSantaBudget = newSantaBudget;
         this.newGiftsList = newGiftsList;
         this.newChildrenList = newChildrenList;
@@ -53,7 +51,7 @@ public final class AnnualChange {
         return childrenUpdates;
     }
 
-    public DistributionStrategy getDistributionStrategy() {
+    public String getDistributionStrategy() {
         return distributionStrategy;
     }
 

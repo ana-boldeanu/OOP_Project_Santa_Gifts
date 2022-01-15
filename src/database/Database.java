@@ -1,6 +1,5 @@
 package database;
 
-import distribution_strategies.DistributionStrategyFactory;
 import enums.Category;
 import fileio.AnnualChangesData;
 import fileio.ChildInputData;
@@ -89,11 +88,9 @@ public final class Database {
                         gift.getCategory(), gift.getQuantity()));
             }
 
-            DistributionStrategyFactory strategyFactory = new DistributionStrategyFactory();
-
             annualChangesList.add(new AnnualChange(annualChange.getNewSantaBudget(),
                     newGiftsList, newChildrenList, annualChange.getChildrenUpdates(),
-                    strategyFactory.createStrategy(annualChange.getDistributionStrategy())));
+                    annualChange.getDistributionStrategy()));
         }
     }
 

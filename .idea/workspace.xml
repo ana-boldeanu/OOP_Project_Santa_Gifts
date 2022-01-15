@@ -4,34 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="Added README + some comments">
-      <change afterPath="$PROJECT_DIR$/src/database/ReceivedGift.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distribution_strategies/ChildScoreDistribution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distribution_strategies/CityScoreDistribution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distribution_strategies/DistributionStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distribution_strategies/DistributionStrategyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/distribution_strategies/IdDistribution.java" afterDir="false" />
+    <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="Added new fields and adapted InputLoader">
+      <change afterPath="$PROJECT_DIR$/src/database/CityScore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/simulation/ChildrenSorter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/common/Constants.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/common/Constants.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/enums/Cities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/enums/Cities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/Utils.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/Utils.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/common/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/common/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/AnnualChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/AnnualChange.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Child.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Gift.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/GiftType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/AnnualChangesData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/AnnualChangesData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/ChildInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/ChildInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/GiftInputData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/GiftInputData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/InputLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/InputLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/database/GiftType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/GiftType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distribution_strategies/ChildScoreDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distribution_strategies/CityScoreDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distribution_strategies/DistributionStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distribution_strategies/DistributionStrategyFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/distribution_strategies/IdDistribution.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/Cities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/Cities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/fileio/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/score_strategies/AverageStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/score_strategies/AverageStrategyFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/simulation/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/output/ChildOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/output/ChildOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategies/AverageScoreStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/score_strategies/AverageScoreStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategies/AverageStrategyFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/score_strategies/AverageStrategyFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategies/BabyAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/score_strategies/BabyAverageScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategies/KidAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/score_strategies/KidAverageScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategies/TeenAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/score_strategies/TeenAverageScore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/strategies/YoungAdultAverageScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/score_strategies/YoungAdultAverageScore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Simulation.java" afterDir="false" />
     </list>
     <list id="0675eeb6-cf95-4921-b816-565db58721ee" name="out_test" comment="out_test" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641666797311</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added new fields and adapted InputLoader">
+      <created>1642253865258</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642253865258</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,6 +182,18 @@
     <MESSAGE value="Finished Simulation Logic, Needs a Fix" />
     <MESSAGE value="Stage 1 completed" />
     <MESSAGE value="Added README + some comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added README + some comments" />
+    <MESSAGE value="Added new fields and adapted InputLoader" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new fields and adapted InputLoader" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

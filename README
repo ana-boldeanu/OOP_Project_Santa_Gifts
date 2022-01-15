@@ -2,6 +2,25 @@
 // Group 321CD
 // OOP Project 2021 - Stage 1
 
+
+Stage 2 changes:
+    1. Added "niceScoreBonus" and "elfType" fields to Child and ChildInputData classes
+    2. Added "quantity" to GiftInputData class
+    3. General info about a Gift is now GiftType
+    4. Added ReceivedGift class to be used in Child's receivedGifts list (so that it doesn't
+    contain the quantity field)
+    5. Added DistributionStrategy field to AnnualChange class
+    6. Updated Database constructor to reflect above changes
+    7. Updated Child receiveGift() method to reflect above changes
+
+    8. Updated Round distributeGifts() using Gift decreaseQuantity() method  and quantity check
+    9. Updated Child computeAverageScore() method
+    10. Updated Round computeBudgets() adding switch case for BLACK and PINK elves
+    11. Updated Round distributeGifts() adding YELLOW elf bonus
+
+    12. added HashMap for remembering averageScores for each City in Round constructor
+    13. added computeCityScores() method
+
 ============================ Components & Approach =============================
 # main
     * Main - Entry point for testing. To run a test, the method action() does

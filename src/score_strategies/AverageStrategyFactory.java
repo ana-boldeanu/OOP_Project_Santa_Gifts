@@ -2,14 +2,17 @@ package score_strategies;
 
 import database.Child;
 
+/**
+ * Singleton Factory used to create AverageScoreStrategies according to Child's ageCategory
+ */
 public final class AverageStrategyFactory {
     /**
      * Unique instance of this Singleton class
      */
     private static AverageStrategyFactory instance = null;
 
-    // This is a Singleton
     private AverageStrategyFactory() {
+        // private Constructor
     }
 
     /**

@@ -18,7 +18,7 @@ public final class GiftType {
     /**
      * Quantity
      */
-    private final int quantity;
+    private int quantity;
 
     public GiftType(final String productName, final Double price, final Category category,
                     final int quantity) {
@@ -26,6 +26,10 @@ public final class GiftType {
         this.price = price;
         this.category = category;
         this.quantity = quantity;
+    }
+
+    public void decreaseQuantity() {
+        quantity--;
     }
 
     public String getProductName() {
