@@ -19,6 +19,9 @@ public enum ElvesType {
 
     private String value;
 
+    /**
+     * Get the value of this Enum
+     */
     ElvesType(final String value) {
         this.value = value;
     }

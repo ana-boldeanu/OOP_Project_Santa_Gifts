@@ -1,7 +1,13 @@
 package simulation;
 
-
-import database.*;
+import common.Constants;
+import database.AnnualChange;
+import database.Child;
+import database.ChildUpdateData;
+import database.CityScore;
+import database.Database;
+import database.GiftType;
+import database.ReceivedGift;
 import enums.AgeCategory;
 import enums.Category;
 import enums.Cities;
@@ -12,7 +18,6 @@ import simulation.output.ChildOutput;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Map;
 
 /**
  * A round in the simulation
@@ -76,6 +81,9 @@ public final class Round {
         }
     }
 
+    /**
+     * Compute the averageScores of the Cities
+     */
     public void computeCityScores() {
         // First sort the childrenList by ID
         ChildrenSorter childrenSorter = new ChildrenSorter();
@@ -105,10 +113,10 @@ public final class Round {
 
             // Apply BLACK or PINK elves bonuses
             if (child.getElfType().equals(ElvesType.BLACK)) {
-                childBudget -= childBudget * 30 / 100;
+                childBudget -= childBudget * Constants.BLACK_ELF_PERCENTAGE / 100;
 
             } else if (child.getElfType().equals(ElvesType.PINK)) {
-                childBudget += childBudget * 30 / 100;
+                childBudget += childBudget * Constants.PINK_ELF_PERCENTAGE / 100;
             }
 
             child.setAssignedBudget(childBudget);
@@ -118,7 +126,7 @@ public final class Round {
     /**
      * Distribute Gifts to each Child in this Round, according to the desired Strategy
      */
-    public void distributeGifts(String distributionStrategy) {
+    public void distributeGifts(final String distributionStrategy) {
         // Empty the Lists of receivedGifts
         for (Child child : currChildrenList) {
             child.resetReceivedGifts();
@@ -189,7 +197,7 @@ public final class Round {
 
         annualChildren.sort(new Comparator<ChildOutput>() {
             @Override
-            public int compare(ChildOutput o1, ChildOutput o2) {
+            public int compare(final ChildOutput o1, final ChildOutput o2) {
                 return Integer.compare(o1.getId(), o2.getId());
             }
         });

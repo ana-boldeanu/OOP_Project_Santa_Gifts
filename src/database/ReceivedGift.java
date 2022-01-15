@@ -2,7 +2,11 @@ package database;
 
 import enums.Category;
 
-public class ReceivedGift {
+/**
+ * General information about a Gift that a Child can receive (it's the same as GiftType, but it
+ * doesn't contain the quantity field)
+ */
+public final class ReceivedGift {
     /**
      * Name of the gift
      */
@@ -16,7 +20,7 @@ public class ReceivedGift {
      */
     private final Category category;
 
-    public ReceivedGift(String productName, Double price, Category category) {
+    public ReceivedGift(final String productName, final Double price, final Category category) {
         this.productName = productName;
         this.price = price;
         this.category = category;

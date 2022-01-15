@@ -1,7 +1,6 @@
 package fileio;
 
 import enums.Category;
-import enums.Cities;
 import enums.ElvesType;
 
 /**

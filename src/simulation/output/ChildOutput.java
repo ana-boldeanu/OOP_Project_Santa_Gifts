@@ -1,6 +1,5 @@
 package simulation.output;
 
-import database.GiftType;
 import database.ReceivedGift;
 import enums.Category;
 

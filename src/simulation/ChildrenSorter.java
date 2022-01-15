@@ -2,13 +2,21 @@ package simulation;
 
 import database.Child;
 import database.CityScore;
-import enums.Cities;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
-public class ChildrenSorter {
-    public List<Child> sortChildren(List<Child> childrenList, String distributionStrategy,
-                             List<CityScore> cityScores) {
+/**
+ * Class used to sort a childrenList
+ */
+public final class ChildrenSorter {
+    /**
+     * Sort the list given as parameter according to the sorting option, then return the sorted list
+     */
+    public List<Child> sortChildren(final List<Child> childrenList,
+                                    final String distributionStrategy,
+                                    final List<CityScore> cityScores) {
         switch (distributionStrategy) {
             case "id":
                 return sortById(childrenList);
@@ -24,10 +32,13 @@ public class ChildrenSorter {
         }
     }
 
-    public List<Child> sortById(List<Child> childrenList) {
+    /**
+     * Sort the list by the ID of the Children, in ascending order (returns the same list, sorted)
+     */
+    public List<Child> sortById(final List<Child> childrenList) {
         childrenList.sort(new Comparator<Child>() {
             @Override
-            public int compare(Child o1, Child o2) {
+            public int compare(final Child o1, final Child o2) {
                 return Integer.compare(o1.getId(), o2.getId());
             }
         });
@@ -35,10 +46,14 @@ public class ChildrenSorter {
         return childrenList;
     }
 
-    public List<Child> sortByChildScore(List<Child> childrenList) {
+    /**
+     * Sort the list by the averageScore of the Children, in descending order
+     * (returns the same list, sorted)
+     */
+    public List<Child> sortByChildScore(final List<Child> childrenList) {
         childrenList.sort(new Comparator<Child>() {
             @Override
-            public int compare(Child o1, Child o2) {
+            public int compare(final Child o1, final Child o2) {
                 if (o1.getAverageScore().equals(o2.getAverageScore())) {
                     // If equal averageScores, the lower ID comes first
                     return Integer.compare(o1.getId(), o2.getId());
@@ -51,11 +66,16 @@ public class ChildrenSorter {
         return childrenList;
     }
 
-    public List<Child> sortByCityScore(List<Child> childrenList, List<CityScore> cityScores) {
+    /**
+     * Sort the childrenList by the averageScore of the Cities they live in
+     * (builds a new list containing the same Child objects in the new order and returns it)
+     */
+    public List<Child> sortByCityScore(final List<Child> childrenList,
+                                       final List<CityScore> cityScores) {
         // First, sort the Cities
         cityScores.sort(new Comparator<CityScore>() {
             @Override
-            public int compare(CityScore o1, CityScore o2) {
+            public int compare(final CityScore o1, final CityScore o2) {
                 if (o1.getAverageScore().equals(o2.getAverageScore())) {
                     // If equal averageScores, sort them by their name
                     return o1.getCityEnum().getValue().compareTo(o2.getCityEnum().getValue());
@@ -82,7 +102,7 @@ public class ChildrenSorter {
             // Sort the Children in this City by their ID
             childrenInThisCity.sort(new Comparator<Child>() {
                 @Override
-                public int compare(Child o1, Child o2) {
+                public int compare(final Child o1, final Child o2) {
                     return Integer.compare(o1.getId(), o2.getId());
                 }
             });

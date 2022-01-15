@@ -4,8 +4,8 @@ import common.Constants;
 import enums.AgeCategory;
 import enums.Category;
 import enums.ElvesType;
-import score_strategies.AverageScoreStrategy;
-import score_strategies.AverageStrategyFactory;
+import strategies.AverageScoreStrategy;
+import strategies.AverageStrategyFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -106,8 +106,8 @@ public final class Child {
         // Add the niceScoreBonus
         averageScore += averageScore * niceScoreBonus / 100;
 
-        if (averageScore > 10.0) {
-            averageScore = 10.0;
+        if (averageScore > Constants.MAX_AVERAGE_SCORE) {
+            averageScore = Constants.MAX_AVERAGE_SCORE;
         }
     }
 
@@ -191,10 +191,6 @@ public final class Child {
         return niceScoresList;
     }
 
-    public AverageScoreStrategy getAverageScoreStrategy() {
-        return averageScoreStrategy;
-    }
-
     public Double getAverageScore() {
         return averageScore;
     }
@@ -215,7 +211,7 @@ public final class Child {
         return elfType;
     }
 
-    public void setElfType(ElvesType elfType) {
+    public void setElfType(final ElvesType elfType) {
         this.elfType = elfType;
     }
 
@@ -225,10 +221,6 @@ public final class Child {
 
     public void setGiftsPreferences(final List<Category> giftsPreferences) {
         this.giftsPreferences = giftsPreferences;
-    }
-
-    public void setAgeCategory(final AgeCategory ageCategory) {
-        this.ageCategory = ageCategory;
     }
 
     public void setAverageScore(final Double averageScore) {

@@ -4,7 +4,10 @@ import enums.Cities;
 
 import java.util.List;
 
-public class CityScore {
+/**
+ * City class that contains the averageScore of a City
+ */
+public final class CityScore {
     /**
      * The corresponding Cities Enum for this City
      */
@@ -14,12 +17,16 @@ public class CityScore {
      */
     private Double averageScore;
 
-    public CityScore(Cities cityEnum, Double averageScore) {
+    public CityScore(final Cities cityEnum, final Double averageScore) {
         this.cityEnum = cityEnum;
         this.averageScore = averageScore;
     }
 
-    public void computeCityScore(List<Child> currChildrenList) {
+    /**
+     * Computes the averageScore of this City as the average of the scores of the Children
+     * who live here
+     */
+    public void computeCityScore(final List<Child> currChildrenList) {
         Double sumScores = 0.0;
         int nrScores = 0;
 
@@ -41,7 +48,7 @@ public class CityScore {
         return averageScore;
     }
 
-    public void setAverageScore(Double averageScore) {
+    public void setAverageScore(final Double averageScore) {
         this.averageScore = averageScore;
     }
 }

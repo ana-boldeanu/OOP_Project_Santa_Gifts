@@ -41,9 +41,6 @@ public final class Main {
             String filepath = Constants.OUTPUT_PATH
                     + file.getName().replaceAll("[^0-9]", "")
                     + Constants.FILE_EXTENSION;
-            if (file.getName().contains("test22")) {
-                action(file.getAbsolutePath(), filepath);
-            }
             action(file.getAbsolutePath(), filepath);
         }
 

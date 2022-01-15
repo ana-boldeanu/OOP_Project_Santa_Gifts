@@ -84,7 +84,7 @@ Stage 2 changes:
     - The incrementAge() method updates both the AgeCategory and the Strategy.
 
 
-# score_strategies
+# strategies
     This package contains an AverageScoreStrategy interface and 4 different
   implementations for it, according to the ageCategory of the Child (BABY,
   KID, TEEN or YOUNG_ADULT).

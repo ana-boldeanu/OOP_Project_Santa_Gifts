@@ -2,6 +2,9 @@ package database;
 
 import enums.Category;
 
+/**
+ * General information about a Gift
+ */
 public final class GiftType {
     /**
      * Name of the gift
@@ -28,6 +31,9 @@ public final class GiftType {
         this.quantity = quantity;
     }
 
+    /**
+     * Decrease the quantity of this GiftType by 1
+     */
     public void decreaseQuantity() {
         quantity--;
     }

@@ -9,6 +9,9 @@ import fileio.Input;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * General information that is used for the Simulation
+ */
 public final class Database {
     /**
      * Unique instance of this Singleton class
