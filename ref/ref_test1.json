@@ -33,8 +33,8 @@
       "age" : 5,
       "giftsPreferences" : [ "Board Games", "Clothes", "Books" ],
       "averageScore" : 10.0,
-      "niceScoreHistory" : [ 10.0 ],
-      "assignedBudget" : 398.0,
+      "niceScoreHistory" : [ 10.0, 10.0 ],
+      "assignedBudget" : 326.0,
       "receivedGifts" : [ {
         "productName" : "Uno",
         "price" : 10.0,

@@ -49,6 +49,7 @@ public final class InputLoader {
             numberOfYears = Integer.parseInt(jsonObject.get(Constants.NUMBER_OF_YEARS).toString());
             santaBudget = Double.parseDouble(jsonObject.get(Constants.SANTA_BUDGET).toString());
 
+            // These are the JSONArrays of data that will be read
             JSONObject jsonInitialData = (JSONObject) jsonObject.get(Constants.INITIAL_DATA);
             JSONArray jsonChildren = (JSONArray) jsonInitialData.get(Constants.CHILDREN);
             JSONArray jsonGifts = (JSONArray) jsonInitialData.get(Constants.SANTA_GIFTS);
@@ -76,7 +77,11 @@ public final class InputLoader {
                             ((JSONObject) jsonChild).get(Constants.CITY).toString(),
                             Double.parseDouble(((JSONObject) jsonChild)
                                     .get(Constants.NICE_SCORE).toString()),
-                            giftsPreferences));
+                            giftsPreferences,
+                            Double.parseDouble(((JSONObject) jsonChild)
+                                    .get(Constants.NICE_SCORE_BONUS).toString()),
+                            Utils.stringToElves(((JSONObject) jsonChild)
+                                    .get(Constants.ELF).toString())));
                 }
             }
 
@@ -88,7 +93,9 @@ public final class InputLoader {
                             Double.parseDouble(((JSONObject) jsonGift)
                                     .get(Constants.PRICE).toString()),
                             Utils.stringToCategory(((JSONObject) jsonGift)
-                                    .get(Constants.CATEGORY).toString())));
+                                    .get(Constants.CATEGORY).toString()),
+                            Integer.parseInt(((JSONObject) jsonGift)
+                                    .get(Constants.QUANTITY).toString())));
                 }
             }
 
@@ -119,7 +126,9 @@ public final class InputLoader {
                                     Double.parseDouble(((JSONObject) jsonNewGift)
                                             .get(Constants.PRICE).toString()),
                                     Utils.stringToCategory(((JSONObject) jsonNewGift)
-                                            .get(Constants.CATEGORY).toString())));
+                                            .get(Constants.CATEGORY).toString()),
+                                    Integer.parseInt(((JSONObject) jsonNewGift)
+                                            .get(Constants.QUANTITY).toString())));
                         }
                     }
 
@@ -151,7 +160,11 @@ public final class InputLoader {
                                             .get(Constants.CITY).toString(),
                                     Double.parseDouble(((JSONObject) jsonNewChild)
                                             .get(Constants.NICE_SCORE).toString()),
-                                    giftsPreferences));
+                                    giftsPreferences,
+                                    Double.parseDouble(((JSONObject) jsonNewChild)
+                                            .get(Constants.NICE_SCORE_BONUS).toString()),
+                                    Utils.stringToElves(((JSONObject) jsonNewChild)
+                                            .get(Constants.ELF).toString())));
                         }
                     }
 
@@ -185,7 +198,8 @@ public final class InputLoader {
                     }
 
                     annualChangesList.add(new AnnualChangesData(newSantaBudget, newGiftsList,
-                            newChildrenList, childrenUpdates));
+                            newChildrenList, childrenUpdates,
+                            ((JSONObject) jsonAnnualChange).get(Constants.STRATEGY).toString()));
                 }
             }
 

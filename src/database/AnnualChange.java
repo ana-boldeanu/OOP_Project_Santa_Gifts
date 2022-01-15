@@ -10,7 +10,7 @@ public final class AnnualChange {
     /**
      * New Gifts to be added in SantaGiftsList
      */
-    private final List<Gift> newGiftsList;
+    private final List<GiftType> newGiftsList;
     /**
      * New Children to be added in ChildrenList
      */
@@ -19,21 +19,27 @@ public final class AnnualChange {
      * List of updates for some Children
      */
     private final List<ChildUpdateData> childrenUpdates;
+    /**
+     * Strategy used to distribute Gifts
+     */
+    private final String distributionStrategy;
 
-    public AnnualChange(final double newSantaBudget, final List<Gift> newGiftsList,
+    public AnnualChange(final double newSantaBudget, final List<GiftType> newGiftsList,
                         final List<Child> newChildrenList,
-                        final List<ChildUpdateData> childrenUpdates) {
+                        final List<ChildUpdateData> childrenUpdates,
+                        final String distributionStrategy) {
         this.newSantaBudget = newSantaBudget;
         this.newGiftsList = newGiftsList;
         this.newChildrenList = newChildrenList;
         this.childrenUpdates = childrenUpdates;
+        this.distributionStrategy = distributionStrategy;
     }
 
     public double getNewSantaBudget() {
         return newSantaBudget;
     }
 
-    public List<Gift> getNewGiftsList() {
+    public List<GiftType> getNewGiftsList() {
         return newGiftsList;
     }
 
@@ -45,10 +51,15 @@ public final class AnnualChange {
         return childrenUpdates;
     }
 
+    public String getDistributionStrategy() {
+        return distributionStrategy;
+    }
+
     @Override
     public String toString() {
         return "AnnualChange{" + "newSantaBudget=" + newSantaBudget
                 + ", newGiftsList=" + newGiftsList + ", newChildrenList=" + newChildrenList
-                + ", childrenUpdates=" + childrenUpdates + '}';
+                + ", childrenUpdates=" + childrenUpdates
+                + ", distributionStrategy=" + distributionStrategy + '}';
     }
 }

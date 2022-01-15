@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="Stage 1 completed">
-      <change afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkstyle.txt" beforeDir="false" afterPath="$PROJECT_DIR$/checkstyle.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/fileio/InputLoader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/proiect1/main/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Child.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Child.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fileio/InputLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/fileio/InputLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/AnnualChildren.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/output/AnnualChildren.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/ChildOutput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/output/ChildOutput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/Output.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/output/Output.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/simulation/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/simulation/Simulation.java" afterDir="false" />
-    </list>
+    <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="Added Elf bonuses and ChildrenSorter class" />
     <list id="0675eeb6-cf95-4921-b816-565db58721ee" name="out_test" comment="out_test" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,9 +15,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="module-info" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="module-info" />
       </list>
     </option>
   </component>
@@ -46,13 +30,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/database/Gift.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/strategies/YoungAdultAverageScore.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/strategies/TeenAverageScore.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/strategies/KidAverageScore.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/strategies/BabyAverageScore.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/database/GiftType.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/score_strategies/YoungAdultAverageScore.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/score_strategies/TeenAverageScore.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/score_strategies/KidAverageScore.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/score_strategies/BabyAverageScore.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/database/Child.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/strategies/AverageScoreStrategy.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/score_strategies/AverageScoreStrategy.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/database/Database.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/fileio/Input.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/fileio/GiftInputData.java" root0="FORCE_HIGHLIGHTING" />
@@ -71,9 +55,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/libs/org.json.simple-0.3-incubating.jar" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.5103448" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
@@ -135,7 +119,28 @@
       <option name="project" value="LOCAL" />
       <updated>1641658480215</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added README + some comments">
+      <created>1641666797311</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1641666797311</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added new fields and adapted InputLoader">
+      <created>1642253865258</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1642253865258</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Added Elf bonuses and ChildrenSorter class">
+      <created>1642266153657</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1642266153657</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +163,20 @@
     <MESSAGE value="File I/O Operations + JSON Parsing" />
     <MESSAGE value="Finished Simulation Logic, Needs a Fix" />
     <MESSAGE value="Stage 1 completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Stage 1 completed" />
+    <MESSAGE value="Added README + some comments" />
+    <MESSAGE value="Added new fields and adapted InputLoader" />
+    <MESSAGE value="Added Elf bonuses and ChildrenSorter class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Elf bonuses and ChildrenSorter class" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/Main.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -3,6 +3,7 @@ package fileio;
 import common.Constants;
 import enums.AgeCategory;
 import enums.Category;
+import enums.ElvesType;
 
 import java.util.List;
 
@@ -39,10 +40,19 @@ public final class ChildInputData {
      * List of Gifts preferences
      */
     private final List<Category> giftsPreferences;
+    /**
+     * Nice Score Bonus
+     */
+    private final Double niceScoreBonus;
+    /**
+     * Elf Type
+     */
+    private final ElvesType elfType;
 
     public ChildInputData(final int id, final String lastName, final String firstName,
                           final int age, final String city,
-                          final Double niceScore, final List<Category> giftsPreferences) {
+                          final Double niceScore, final List<Category> giftsPreferences,
+                          final Double niceScoreBonus, final ElvesType elfType) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -50,6 +60,8 @@ public final class ChildInputData {
         this.city = city;
         this.niceScore = niceScore;
         this.giftsPreferences = giftsPreferences;
+        this.niceScoreBonus = niceScoreBonus;
+        this.elfType = elfType;
     }
 
     /**
@@ -96,5 +108,13 @@ public final class ChildInputData {
 
     public List<Category> getGiftsPreferences() {
         return giftsPreferences;
+    }
+
+    public Double getNiceScoreBonus() {
+        return niceScoreBonus;
+    }
+
+    public ElvesType getElfType() {
+        return elfType;
     }
 }

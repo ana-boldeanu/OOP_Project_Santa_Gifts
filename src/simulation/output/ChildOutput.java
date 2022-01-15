@@ -1,6 +1,7 @@
 package simulation.output;
 
-import database.Gift;
+import database.GiftType;
+import database.ReceivedGift;
 import enums.Category;
 
 import java.util.List;
@@ -49,12 +50,12 @@ public final class ChildOutput {
     /**
      * Gifts that this Child received in current Round
      */
-    private final List<Gift> receivedGifts;
+    private final List<ReceivedGift> receivedGifts;
 
     public ChildOutput(final int id, final String lastName, final String firstName,
                        final String city, final int age, final List<Category> giftsPreferences,
                        final Double averageScore, final List<Double> niceScoresList,
-                       final Double assignedBudget, final List<Gift> receivedGifts) {
+                       final Double assignedBudget, final List<ReceivedGift> receivedGifts) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -103,7 +104,7 @@ public final class ChildOutput {
         return assignedBudget;
     }
 
-    public List<Gift> getReceivedGifts() {
+    public List<ReceivedGift> getReceivedGifts() {
         return receivedGifts;
     }
 

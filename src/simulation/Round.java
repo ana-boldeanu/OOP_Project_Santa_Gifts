@@ -1,18 +1,17 @@
 package simulation;
 
 
-import database.AnnualChange;
-import database.Child;
-import database.Database;
-import database.Gift;
-import database.ChildUpdateData;
+import database.*;
 import enums.AgeCategory;
 import enums.Category;
+import enums.Cities;
+import enums.ElvesType;
 import simulation.output.AnnualChildren;
 import simulation.output.ChildOutput;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A round in the simulation
@@ -33,11 +32,15 @@ public final class Round {
     /**
      * List of children
      */
-    private final List<Child> currChildrenList = new ArrayList<>();
+    private List<Child> currChildrenList = new ArrayList<>();
     /**
      * List of gifts from initialData
      */
-    private final List<Gift> currGiftsList = new ArrayList<>();
+    private final List<GiftType> currGiftsList = new ArrayList<>();
+    /**
+     * List of CityScores
+     */
+    private final List<CityScore> currCityScores = new ArrayList<>();
 
     public Round(final Database database) {
         this.database = database;
@@ -56,6 +59,11 @@ public final class Round {
             }
             return o1.getCategory().compareTo(o2.getCategory());
         });
+
+        // Add Cities to the list, initially each City has averageScore = 0
+        for (Cities city : Cities.values()) {
+            currCityScores.add(new CityScore(city, 0.0));
+        }
     }
 
     /**
@@ -64,6 +72,17 @@ public final class Round {
     public void computeAverageScores() {
         for (Child child : currChildrenList) {
             child.computeAverageScore();
+        }
+    }
+
+    public void computeCityScores() {
+        // First sort the childrenList by ID
+        ChildrenSorter childrenSorter = new ChildrenSorter();
+        childrenSorter.sortById(currChildrenList);
+
+        // Compute averageScore for each City
+        for (CityScore cityScore : currCityScores) {
+            cityScore.computeCityScore(currChildrenList);
         }
     }
 
@@ -80,31 +99,69 @@ public final class Round {
         Double budgetUnit = currBudget / sumAllScores;
 
         for (Child child : currChildrenList) {
+            // Compute childBudget
             double childBudget = child.getAverageScore() * budgetUnit;
+
+            // Apply BLACK or PINK elves bonuses
+            switch (child.getElfType()) {
+                case BLACK -> childBudget -= childBudget * 30 / 100;
+                case PINK -> childBudget += childBudget * 30 / 100;
+                default -> {
+                }
+            }
+
             child.setAssignedBudget(childBudget);
         }
     }
 
     /**
-     * Distribute Gifts to each Child in this Round
+     * Distribute Gifts to each Child in this Round, according to the desired Strategy
      */
-    public void distributeGifts() {
+    public void distributeGifts(String distributionStrategy) {
         // Empty the Lists of receivedGifts
-        for (Child child :currChildrenList) {
+        for (Child child : currChildrenList) {
             child.resetReceivedGifts();
         }
 
-        // Distribute new Gifts
+        // Order the list of Children according to the distributionStrategy
+        ChildrenSorter childrenSorter = new ChildrenSorter();
+        currChildrenList = childrenSorter.sortChildren(currChildrenList, distributionStrategy,
+                currCityScores);
+
+        // Distribute the Gifts
         for (Child child : currChildrenList) {
             double budget = child.getAssignedBudget();
             for (Category category : child.getGiftsPreferences()) {
-                for (Gift gift : currGiftsList) {
-                    if (gift.getCategory().equals(category)) {
+                for (GiftType gift : currGiftsList) {
+                    if (gift.getCategory().equals(category) && gift.getQuantity() > 0) {
                         if (gift.getPrice() <= budget) {
-                            child.receiveGift(gift);
+                            child.receiveGift(new ReceivedGift(gift.getProductName(),
+                                    gift.getPrice(), gift.getCategory()));
                             budget -= gift.getPrice();
+                            gift.decreaseQuantity();
                         }
                         break;
+                    }
+                }
+            }
+        }
+
+        // Apply YELLOW elf bonus
+        for (Child child : currChildrenList) {
+            if (child.getElfType().equals(ElvesType.YELLOW)
+                    && child.getReceivedGifts().isEmpty()) {
+                Category prefCategory = child.getGiftsPreferences().get(0);
+                for (GiftType gift : currGiftsList) {
+                    if (gift.getCategory().equals(prefCategory)) {
+                        if (gift.getQuantity() > 0) {
+                            // Receive the cheapest Gift of this Category
+                            child.receiveGift(new ReceivedGift(gift.getProductName(),
+                                    gift.getPrice(), gift.getCategory()));
+                            gift.decreaseQuantity();
+                        } else {
+                            // The cheapest Gift is out of stock
+                            break;
+                        }
                     }
                 }
             }
@@ -119,7 +176,7 @@ public final class Round {
 
         for (Child child : currChildrenList) {
             List<Category> giftPreferences = new ArrayList<>(child.getGiftsPreferences());
-            List<Gift> receivedGifts = new ArrayList<>(child.getReceivedGifts());
+            List<ReceivedGift> receivedGifts = new ArrayList<>(child.getReceivedGifts());
             List<Double> niceScoresHistory = new ArrayList<>(child.getNiceScoresList());
 
             annualChildren.add(new ChildOutput(child.getId(), child.getLastName(),
