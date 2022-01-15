@@ -137,12 +137,6 @@
         "quantity": 8
       },
       {
-        "productName": "Teddy Bear",
-        "price": 5,
-        "category": "Toys",
-        "quantity": 2
-      },
-      {
         "productName": "Harry Potter",
         "price": 35,
         "category": "Books",

@@ -199,12 +199,6 @@
       "newSantaBudget": 100,
       "newGifts": [
         {
-          "productName": "Bag of Candy",
-          "price": 20,
-          "category": "Sweets",
-          "quantity": 3
-        },
-        {
           "productName": "Monopoly",
           "price": 30,
           "category": "Board Games",
