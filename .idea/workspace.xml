@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="Broke some methods into smaller pieces">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database/CityScore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/database/CityScore.java" afterDir="false" />
+    <list default="true" id="d662010a-d6c5-4bb5-92a6-5b13c2206c94" name="Changes" comment="Upd README">
+      <change afterPath="$PROJECT_DIR$/POO_Proiect1_Etapa2.zip" afterDir="false" />
     </list>
     <list id="0675eeb6-cf95-4921-b816-565db58721ee" name="out_test" comment="out_test" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642275350986</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Upd README">
+      <created>1642278870379</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1642278870379</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -194,7 +199,8 @@
     <MESSAGE value="Updated ChildUpdateData class w/ newElfType" />
     <MESSAGE value="Cute updates for Checkstyle" />
     <MESSAGE value="Broke some methods into smaller pieces" />
-    <option name="LAST_COMMIT_MESSAGE" value="Broke some methods into smaller pieces" />
+    <MESSAGE value="Upd README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Upd README" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
